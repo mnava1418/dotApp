@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct SecondaryBtnView: View {
+struct CustomButtonView: View {
     public let label: String
+    public let type: BtnType
     public let onClick: () -> Void
     
     var body: some View {
@@ -24,14 +25,14 @@ struct SecondaryBtnView: View {
                     .padding()
                 Spacer()
             }
-            .background(Color.AppColors.contrast)
+            .background(type.color)
             .cornerRadius(20.0)
         }
     }
 }
 
 #Preview {
-    SecondaryBtnView(label: "Secondary Button") {
-        print("btn action")
+    CustomButtonView(label: "Button", type: .primary) {
+        print("On click")
     }
 }
