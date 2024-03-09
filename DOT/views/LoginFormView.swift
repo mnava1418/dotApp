@@ -23,13 +23,12 @@ struct LoginFormView: View {
             PasswordInputView(password: $user.password, label: "Password")
                 .padding(.top)
             
-            Button {
+            
+            CustomButtonView(label: "Login", type: .primary) {
                 user.login()
-            } label: {
-                PrimaryBtnView(label: "Login")
             }
             .padding(.top, 40)
-            
+                        
             Button {
                 inLoginMode.toggle()
             } label: {

@@ -24,10 +24,8 @@ struct RegisterFormView: View {
             PasswordInputView(password: $user.confirmPassword, label: "Confirma tu password")
                 .padding(.top)
             
-            Button {
+            CustomButtonView(label: "Regístrate", type: .primary) {
                 user.register()
-            } label: {
-                PrimaryBtnView(label: "Regístrate")
             }
             .padding(.top, 40)
             
