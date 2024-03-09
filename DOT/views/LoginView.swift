@@ -36,8 +36,14 @@ struct LoginView: View {
                     .padding()
                 }
                 .padding()
-            }.edgesIgnoringSafeArea(.top)
+            }
+            .edgesIgnoringSafeArea(.top)
             
+            if(user.isInvalid) {
+                ModalView(onAction: {
+                    user.isInvalid = false
+                }, title: "Error", message: user.errorMessage, btnLabel: "Reintentar", align: .bottom)
+            }
         }
     }
 }
