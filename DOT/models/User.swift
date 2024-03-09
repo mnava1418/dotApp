@@ -8,15 +8,17 @@
 import Foundation
 
 class User: ObservableObject {
-    @Published var email: String
-    @Published var password: String
-    
-    init(email: String, password: String) {
-        self.email = email
-        self.password = password
-    }
-    
+    @Published var name: String = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var confirmPassword: String = ""
+        
     public func login () {
         print("Email: \(self.email), Password: \(self.password)")
+    }
+    
+    public func register () {
+        print("Name: \(self.name), Email: \(self.email), Password: \(self.password), Confirm Password: \(self.confirmPassword)")
+
     }
 }

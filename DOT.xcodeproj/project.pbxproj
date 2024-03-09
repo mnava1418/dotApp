@@ -17,6 +17,7 @@
 		50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */; };
 		50255AEE2B9C1F8200FD3DD1 /* PrimaryBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AED2B9C1F8200FD3DD1 /* PrimaryBtnView.swift */; };
 		50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */; };
+		50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		50255AED2B9C1F8200FD3DD1 /* PrimaryBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryBtnView.swift; sourceTree = "<group>"; };
 		50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
+		50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				50255AE12B9BE80400FD3DD1 /* components */,
 				50255AD32B993D1300FD3DD1 /* LoginView.swift */,
 				50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */,
+				50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			files = (
 				50255AD42B993D1300FD3DD1 /* LoginView.swift in Sources */,
 				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
+				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,
 				50255AE82B9C150E00FD3DD1 /* User.swift in Sources */,
