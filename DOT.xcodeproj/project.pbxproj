@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD12B993D1300FD3DD1 /* DOTApp.swift */; };
-		50255AD42B993D1300FD3DD1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD32B993D1300FD3DD1 /* ContentView.swift */; };
+		50255AD42B993D1300FD3DD1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD32B993D1300FD3DD1 /* LoginView.swift */; };
 		50255AD62B993D1400FD3DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD52B993D1400FD3DD1 /* Assets.xcassets */; };
 		50255AD92B993D1400FD3DD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */; };
+		50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */; };
+		50255AE52B9C0E3300FD3DD1 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE42B9C0E3300FD3DD1 /* TextInputView.swift */; };
+		50255AE82B9C150E00FD3DD1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE72B9C150E00FD3DD1 /* User.swift */; };
+		50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */; };
+		50255AEE2B9C1F8200FD3DD1 /* PrimaryBtnView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AED2B9C1F8200FD3DD1 /* PrimaryBtnView.swift */; };
+		50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		50255ACE2B993D1300FD3DD1 /* DOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50255AD12B993D1300FD3DD1 /* DOTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTApp.swift; sourceTree = "<group>"; };
-		50255AD32B993D1300FD3DD1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		50255AD32B993D1300FD3DD1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		50255AD52B993D1400FD3DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
+		50255AE42B9C0E3300FD3DD1 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
+		50255AE72B9C150E00FD3DD1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
+		50255AED2B9C1F8200FD3DD1 /* PrimaryBtnView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryBtnView.swift; sourceTree = "<group>"; };
+		50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +63,9 @@
 		50255AD02B993D1300FD3DD1 /* DOT */ = {
 			isa = PBXGroup;
 			children = (
+				50255AE62B9C14F700FD3DD1 /* models */,
+				50255AE02B9BE74C00FD3DD1 /* views */,
 				50255AD12B993D1300FD3DD1 /* DOTApp.swift */,
-				50255AD32B993D1300FD3DD1 /* ContentView.swift */,
 				50255AD52B993D1400FD3DD1 /* Assets.xcassets */,
 				50255AD72B993D1400FD3DD1 /* Preview Content */,
 			);
@@ -65,6 +78,35 @@
 				50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		50255AE02B9BE74C00FD3DD1 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				50255AE12B9BE80400FD3DD1 /* components */,
+				50255AD32B993D1300FD3DD1 /* LoginView.swift */,
+				50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		50255AE12B9BE80400FD3DD1 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */,
+				50255AE42B9C0E3300FD3DD1 /* TextInputView.swift */,
+				50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */,
+				50255AED2B9C1F8200FD3DD1 /* PrimaryBtnView.swift */,
+			);
+			path = components;
+			sourceTree = "<group>";
+		};
+		50255AE62B9C14F700FD3DD1 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				50255AE72B9C150E00FD3DD1 /* User.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +179,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50255AD42B993D1300FD3DD1 /* ContentView.swift in Sources */,
+				50255AD42B993D1300FD3DD1 /* LoginView.swift in Sources */,
+				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
+				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,
+				50255AE82B9C150E00FD3DD1 /* User.swift in Sources */,
+				50255AEE2B9C1F8200FD3DD1 /* PrimaryBtnView.swift in Sources */,
+				50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */,
+				50255AE52B9C0E3300FD3DD1 /* TextInputView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
