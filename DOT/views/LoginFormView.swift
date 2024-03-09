@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginFormView: View {
     @ObservedObject public var user: User
+    @Binding public var inLoginMode: Bool
     
     var body: some View {
         VStack {
@@ -28,10 +29,19 @@ struct LoginFormView: View {
                 PrimaryBtnView(label: "Login")
             }
             .padding(.top, 40)
+            
+            Button {
+                inLoginMode.toggle()
+            } label: {
+                Text("No tienes cuenta? Regístrate")
+                    .font(.title2)
+                    .foregroundColor(Color.AppColors.text)
+            }
+            .padding(.top)
         }
     }
 }
 
 #Preview {
-    LoginFormView(user: User())
+    LoginFormView(user: User(), inLoginMode: .constant(true))
 }

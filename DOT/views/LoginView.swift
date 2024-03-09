@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var user = User(email: "", password: "")
+    @StateObject private var user = User()
+    @State private var inLoginMode = true
     
     var body: some View {
         ZStack {
@@ -25,19 +26,12 @@ struct LoginView: View {
                         TypingTextView(fullText: "Hola DOT...", textFont: .largeTitle, textColor: Color.AppColors.text)
                             .bold()
                         
-                        Image("dot")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                            .padding()
-                        
-                        LoginFormView(user: user)
-                        
-                        Button {
-                            user.login()
-                        } label: {
-                            PrimaryBtnView(label: "Login")
+                        if(inLoginMode) {
+                            LoginFormView(user: user, inLoginMode: $inLoginMode)
+                        } else {
+                            RegisterFormView(user: user, inLoginMode: $inLoginMode)
+                                .padding(.top, 40)
                         }
-                        .padding(.top, 40)
                     }
                     .padding()
                 }
