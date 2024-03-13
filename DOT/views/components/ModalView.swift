@@ -25,12 +25,14 @@ struct ModalView: View {
                     .font(.title2)
                     .foregroundColor(Color.AppColors.text)
                     .padding()
+                    .padding(.top)
                     .bold()
                 
                 Text(self.message)
                     .font(.title3)
                     .foregroundColor(Color.AppColors.text)
                     .padding(.bottom)
+                    .padding(.horizontal)
                 
                 CustomButtonView(label: btnLabel, type: .secondary) {
                     onAction()
@@ -52,10 +54,10 @@ struct ModalView: View {
                 .edgesIgnoringSafeArea(.all)
             //In case you need it in future
             /*.onTapGesture {
-                    withAnimation {
-                        isPresented = false
-                    }
-                }*/
+                withAnimation {
+                    onAction()
+                }
+            }*/
         )
     }
 }
