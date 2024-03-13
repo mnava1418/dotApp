@@ -14,22 +14,30 @@ class User: ObservableObject {
     @Published var confirmPassword: String = ""
     
     //Validation
-    @Published var isInvalid: Bool = false
-    @Published var errorMessage: String = ""
+    private var errorMessage: String = ""
         
     public func login() {
+        AppStatus.shared.isProcessing = true
         if(validateUser(isNewUser: false)) {
             print("Email: \(self.email), Password: \(self.password)")
         } else {
-            isInvalid = true
+            print("Invalid User")
         }
     }
     
-    public func register() {
+    public func register(completion: @escaping (Bool, String) -> Void) {
+        AppStatus.shared.isProcessing = true
+        
         if(validateUser(isNewUser: true)) {
-            print("Name: \(self.name), Email: \(self.email), Password: \(self.password), Confirm Password: \(self.confirmPassword)")
+            AuthService.createUser(email: self.email, password: self.password) { (result, error) in
+                if(!result) {
+                    completion(false, error!)
+                } else {
+                    completion(true, "Tu usuario ha sido creado. Checa tu email para verificar tu cuenta e inicia sesión.")
+                }
+            }
         } else {
-            isInvalid = true
+            completion(false, errorMessage)
         }
     }
     

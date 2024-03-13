@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @StateObject private var user = User()
+    @StateObject private var modal = Modal()
     @State private var inLoginMode = true
     
     var body: some View {
@@ -29,7 +30,7 @@ struct LoginView: View {
                         if(inLoginMode) {
                             LoginFormView(user: user, inLoginMode: $inLoginMode)
                         } else {
-                            RegisterFormView(user: user, inLoginMode: $inLoginMode)
+                            RegisterFormView(user: user, modal: modal, inLoginMode: $inLoginMode)
                                 .padding(.top, 40)
                         }
                     }
@@ -39,10 +40,10 @@ struct LoginView: View {
             }
             .edgesIgnoringSafeArea(.top)
             
-            if(user.isInvalid) {
+            if(modal.show) {
                 ModalView(onAction: {
-                    user.isInvalid = false
-                }, title: "Error", message: user.errorMessage, btnLabel: "Reintentar", align: .bottom)
+                    modal.show = false
+                }, title: modal.title, message: modal.text, btnLabel: modal.btnLabel, align: .bottom)
             }
         }
     }
