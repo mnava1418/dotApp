@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterFormView: View {
     @ObservedObject public var user: User
+    @ObservedObject public var modal: Modal
     @Binding public var inLoginMode: Bool
     
     var body: some View {
@@ -25,7 +26,15 @@ struct RegisterFormView: View {
                 .padding(.top)
             
             CustomButtonView(label: "Regístrate", type: .primary) {
-                user.register()
+                user.register { (result, message) in
+                    AppStatus.shared.isProcessing = false
+                    
+                    modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: result ? "Cerrar" : "Reintentar")
+                    
+                    if(result) {
+                        inLoginMode.toggle()
+                    }
+                }
             }
             .padding(.top, 40)
             
@@ -42,5 +51,5 @@ struct RegisterFormView: View {
 }
 
 #Preview {
-    RegisterFormView(user: User(), inLoginMode: .constant(false))
+    RegisterFormView(user: User(), modal: Modal(), inLoginMode: .constant(false))
 }
