@@ -29,7 +29,7 @@ class DotUser: ObservableObject {
         AppStatus.shared.isProcessing = true
         
         if(validateUser(isNewUser: true)) {
-            AuthService.createUser(email: self.email, password: self.password) { (error) in
+            AuthService.createUser(email: self.email, password: self.password, name: self.name) { (error) in
                 if let error = error {
                     completion(false, error.localizedDescription)
                 } else {
