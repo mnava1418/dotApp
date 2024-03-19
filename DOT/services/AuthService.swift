@@ -18,10 +18,19 @@ struct AuthService {
                     if let emailError = emailError {
                         completion(emailError)
                     } else {
+                        self.logOut()
                         completion(nil)
                     }
                 }
             }
+        }
+    }
+    
+    public static func logOut () {
+        do {
+            try Auth.auth().signOut()
+        } catch let signOutError as NSError {
+            print("Error: %@", signOutError)
         }
     }
 }
