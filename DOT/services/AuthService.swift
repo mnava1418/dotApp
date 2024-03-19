@@ -9,12 +9,18 @@ import Foundation
 import FirebaseAuth
 
 struct AuthService {
-    public static func createUser (email: String, password: String, completion: @escaping (Bool, String?) -> Void) {
+    public static func createUser (email: String, password: String, completion: @escaping ((any Error)?) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             if let error = error {
-                completion(false, error.localizedDescription)
+                completion(error)
             } else if let authResult = authResult {
-                completion(true, nil)
+                authResult.user.sendEmailVerification { emailError in
+                    if let emailError = emailError {
+                        completion(emailError)
+                    } else {
+                        completion(nil)
+                    }
+                }
             }
         }
     }

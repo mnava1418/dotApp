@@ -33,7 +33,7 @@ class DotUser: ObservableObject {
                 if let error = error {
                     completion(false, error.localizedDescription)
                 } else {
-                    completion(true, "Tu usuario ha sido creado. Checa tu email para verificar tu cuenta e inicia sesión.")
+                    completion(true, "Cuenta creada. Revisa tu correo para activarla e inicia sesión.")
                 }
             }
         } else {
