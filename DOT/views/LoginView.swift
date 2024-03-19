@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var user = User()
+    @StateObject private var user = DotUser()
     @StateObject private var modal = Modal()
     @State private var inLoginMode = true
     

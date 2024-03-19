@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginFormView: View {
-    @ObservedObject public var user: User
+    @ObservedObject public var user: DotUser
     @Binding public var inLoginMode: Bool
     
     var body: some View {
@@ -42,5 +42,5 @@ struct LoginFormView: View {
 }
 
 #Preview {
-    LoginFormView(user: User(), inLoginMode: .constant(true))
+    LoginFormView(user: DotUser(), inLoginMode: .constant(true))
 }

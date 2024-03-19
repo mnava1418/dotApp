@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RegisterFormView: View {
-    @ObservedObject public var user: User
+    @ObservedObject public var user: DotUser
     @ObservedObject public var modal: Modal
     @Binding public var inLoginMode: Bool
     
@@ -51,5 +51,5 @@ struct RegisterFormView: View {
 }
 
 #Preview {
-    RegisterFormView(user: User(), modal: Modal(), inLoginMode: .constant(false))
+    RegisterFormView(user: DotUser(), modal: Modal(), inLoginMode: .constant(false))
 }
