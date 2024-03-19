@@ -7,7 +7,7 @@
 
 import Foundation
 
-class User: ObservableObject {
+class DotUser: ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
     @Published var password: String = ""
@@ -29,11 +29,11 @@ class User: ObservableObject {
         AppStatus.shared.isProcessing = true
         
         if(validateUser(isNewUser: true)) {
-            AuthService.createUser(email: self.email, password: self.password) { (result, error) in
-                if(!result) {
-                    completion(false, error!)
+            AuthService.createUser(email: self.email, password: self.password, name: self.name) { (error) in
+                if let error = error {
+                    completion(false, error.localizedDescription)
                 } else {
-                    completion(true, "Tu usuario ha sido creado. Checa tu email para verificar tu cuenta e inicia sesión.")
+                    completion(true, "Cuenta creada. Revisa tu correo para activarla e inicia sesión.")
                 }
             }
         } else {

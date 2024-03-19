@@ -16,7 +16,7 @@
 		50255AD92B993D1400FD3DD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */; };
 		50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */; };
 		50255AE52B9C0E3300FD3DD1 /* TextInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE42B9C0E3300FD3DD1 /* TextInputView.swift */; };
-		50255AE82B9C150E00FD3DD1 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE72B9C150E00FD3DD1 /* User.swift */; };
+		50255AE82B9C150E00FD3DD1 /* DotUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE72B9C150E00FD3DD1 /* DotUser.swift */; };
 		50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */; };
 		50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */; };
 		50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */; };
@@ -25,6 +25,8 @@
 		506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F942B9FFA8B002998B3 /* AppStatus.swift */; };
 		506C2F982BA126DE002998B3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F972BA126DE002998B3 /* AuthService.swift */; };
 		506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F992BA14A77002998B3 /* Modal.swift */; };
+		506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F9B2BA7D370002998B3 /* AccountService.swift */; };
+		506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2FA02BA928BB002998B3 /* FirebaseDatabase */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,7 +40,7 @@
 		50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
 		50255AE42B9C0E3300FD3DD1 /* TextInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputView.swift; sourceTree = "<group>"; };
-		50255AE72B9C150E00FD3DD1 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		50255AE72B9C150E00FD3DD1 /* DotUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DotUser.swift; sourceTree = "<group>"; };
 		50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 		50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormView.swift; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		506C2F942B9FFA8B002998B3 /* AppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		506C2F992BA14A77002998B3 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		506C2F9B2BA7D370002998B3 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */,
 				506C2F922B9FCF9D002998B3 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,6 +77,7 @@
 			children = (
 				50255AD02B993D1300FD3DD1 /* DOT */,
 				50255ACF2B993D1300FD3DD1 /* Products */,
+				506C2F9D2BA7D7BA002998B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,7 +139,7 @@
 		50255AE62B9C14F700FD3DD1 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				50255AE72B9C150E00FD3DD1 /* User.swift */,
+				50255AE72B9C150E00FD3DD1 /* DotUser.swift */,
 				506C2F992BA14A77002998B3 /* Modal.swift */,
 			);
 			path = models;
@@ -152,8 +157,16 @@
 			isa = PBXGroup;
 			children = (
 				506C2F972BA126DE002998B3 /* AuthService.swift */,
+				506C2F9B2BA7D370002998B3 /* AccountService.swift */,
 			);
 			path = services;
+			sourceTree = "<group>";
+		};
+		506C2F9D2BA7D7BA002998B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +187,7 @@
 			name = DOT;
 			packageProductDependencies = (
 				506C2F912B9FCF9D002998B3 /* FirebaseAuth */,
+				506C2FA02BA928BB002998B3 /* FirebaseDatabase */,
 			);
 			productName = DOT;
 			productReference = 50255ACE2B993D1300FD3DD1 /* DOT.app */;
@@ -236,13 +250,14 @@
 				50255AD42B993D1300FD3DD1 /* LoginView.swift in Sources */,
 				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
 				500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */,
+				506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */,
 				506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */,
 				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
 				500B0CF72B9CCA7700A00014 /* ModalView.swift in Sources */,
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,
-				50255AE82B9C150E00FD3DD1 /* User.swift in Sources */,
+				50255AE82B9C150E00FD3DD1 /* DotUser.swift in Sources */,
 				50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */,
 				506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */,
 				50255AE52B9C0E3300FD3DD1 /* TextInputView.swift in Sources */,
@@ -469,6 +484,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 506C2F902B9FCF9D002998B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
+		};
+		506C2FA02BA928BB002998B3 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 506C2F902B9FCF9D002998B3 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
