@@ -15,7 +15,7 @@ enum BtnType {
     var color: Color {
         switch self {
         case .primary:
-            return Color.AppColors.darkContrast
+            return Color.AppColors.main
         case .secondary:
             return Color.AppColors.contrast
         }

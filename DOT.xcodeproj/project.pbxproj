@@ -11,7 +11,7 @@
 		500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B0CF82B9CD04C00A00014 /* CustomButtonView.swift */; };
 		500B0CFC2B9CE73600A00014 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B0CFB2B9CE73600A00014 /* Enums.swift */; };
 		50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD12B993D1300FD3DD1 /* DOTApp.swift */; };
-		50255AD42B993D1300FD3DD1 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD32B993D1300FD3DD1 /* LoginView.swift */; };
+		50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */; };
 		50255AD62B993D1400FD3DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD52B993D1400FD3DD1 /* Assets.xcassets */; };
 		50255AD92B993D1400FD3DD1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */; };
 		50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */; };
@@ -27,6 +27,9 @@
 		506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F992BA14A77002998B3 /* Modal.swift */; };
 		506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F9B2BA7D370002998B3 /* AccountService.swift */; };
 		506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2FA02BA928BB002998B3 /* FirebaseDatabase */; };
+		50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3A2BACF3A70028B956 /* Constants.swift */; };
+		50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */; };
+		50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +38,7 @@
 		500B0CFB2B9CE73600A00014 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		50255ACE2B993D1300FD3DD1 /* DOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50255AD12B993D1300FD3DD1 /* DOTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTApp.swift; sourceTree = "<group>"; };
-		50255AD32B993D1300FD3DD1 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		50255AD52B993D1400FD3DD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50255AD82B993D1400FD3DD1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50255AE22B9BE85700FD3DD1 /* TypingTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingTextView.swift; sourceTree = "<group>"; };
@@ -49,6 +52,9 @@
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		506C2F992BA14A77002998B3 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		506C2F9B2BA7D370002998B3 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		50F1FA3A2BACF3A70028B956 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkButton.swift; sourceTree = "<group>"; };
+		50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				500B0CFB2B9CE73600A00014 /* Enums.swift */,
+				50F1FA3A2BACF3A70028B956 /* Constants.swift */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -117,9 +124,10 @@
 			isa = PBXGroup;
 			children = (
 				50255AE12B9BE80400FD3DD1 /* components */,
-				50255AD32B993D1300FD3DD1 /* LoginView.swift */,
+				50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */,
 				50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */,
 				50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */,
+				50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -132,6 +140,7 @@
 				50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */,
 				500B0CF82B9CD04C00A00014 /* CustomButtonView.swift */,
 				500B0CF62B9CCA7700A00014 /* ModalView.swift */,
+				50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */,
 			);
 			path = components;
 			sourceTree = "<group>";
@@ -247,13 +256,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50255AD42B993D1300FD3DD1 /* LoginView.swift in Sources */,
+				50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */,
 				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
 				500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */,
+				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
 				506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */,
 				506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */,
 				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
+				50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */,
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
+				50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
 				500B0CF72B9CCA7700A00014 /* ModalView.swift in Sources */,
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,

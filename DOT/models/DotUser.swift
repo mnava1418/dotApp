@@ -17,7 +17,6 @@ class DotUser: ObservableObject {
     private var errorMessage: String = ""
         
     public func login() {
-        AppStatus.shared.isProcessing = true
         if(validateUser(isNewUser: false)) {
             print("Email: \(self.email), Password: \(self.password)")
         } else {
@@ -44,6 +43,10 @@ class DotUser: ObservableObject {
         } else {
             completion(false, errorMessage)
         }
+    }
+    
+    public func resetPassword() {
+        print("Reset Password")
     }
     
     //Functions to validate user data

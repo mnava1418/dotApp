@@ -40,7 +40,7 @@ struct CustomButtonView: View {
                 Spacer()
             }
             .background(type.color)
-            .cornerRadius(20.0)
+            .cornerRadius(Constants.View.cornerRadius)
         }
     }
 }
