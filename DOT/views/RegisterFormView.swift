@@ -13,39 +13,53 @@ struct RegisterFormView: View {
     @Binding public var inLoginMode: Bool
     
     var body: some View {
-        VStack {
-            TextInputView(text: $user.name, label: "Nombre", keyboardType: .default)
+        ZStack {
+            LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.contrast]),
+                                   startPoint: .topLeading,
+                                   endPoint: .bottomTrailing)
+                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
-            TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
-                .padding(.top)
-            
-            PasswordInputView(password: $user.password, label: "Password")
-                .padding(.top)
-            
-            PasswordInputView(password: $user.confirmPassword, label: "Confirma tu password")
-                .padding(.top)
-            
-            CustomButtonView(label: "Regístrate", type: .primary) {
-                user.register { (result, message) in
-                    AppStatus.shared.isProcessing = false
-                    
-                    modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: result ? "Cerrar" : "Reintentar")
-                    
-                    if(result) {
-                        inLoginMode.toggle()
+            ScrollView {
+                VStack {
+                    HStack {
+                        Text("Hola, regístrate para comenzar.")
+                            .font(.title)
+                            .bold()
+                            .foregroundColor(Color.AppColors.text)
+                        Spacer()
                     }
+                    .padding(.top)
+                    .padding(.horizontal)
+                    
+                    VStack {
+                        TextInputView(text: $user.name, label: "Nombre", keyboardType: .default)
+                        
+                        TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
+                            .padding(.top)
+                        
+                        PasswordInputView(password: $user.password, label: "Password")
+                            .padding(.top)
+                        
+                        PasswordInputView(password: $user.confirmPassword, label: "Confirma tu password")
+                            .padding(.top)
+                        
+                        CustomButtonView(label: "Regístrate", type: .primary) {
+                            user.register { (result, message) in
+                                AppStatus.shared.isProcessing = false
+                                
+                                modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: result ? "Cerrar" : "Reintentar")
+                                
+                                if(result) {
+                                    inLoginMode.toggle()
+                                }
+                            }
+                        }
+                        .padding(.top, 40)
+                    }
+                    .padding()
                 }
+                .navigationBarTitle("", displayMode: .inline)
             }
-            .padding(.top, 40)
-            
-            Button {
-                inLoginMode.toggle()
-            } label: {
-                Text("Ya tienes cuenta? Login")
-                    .font(.title2)
-                    .foregroundColor(Color.AppColors.text)
-            }
-            .padding(.top)
         }
     }
 }

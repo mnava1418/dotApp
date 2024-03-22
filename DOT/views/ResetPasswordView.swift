@@ -1,14 +1,14 @@
 //
-//  LoginFormView.swift
+//  ResetPasswordView.swift
 //  DOT
 //
-//  Created by Martin Nava on 08/03/24.
+//  Created by Martin Nava on 21/03/24.
 //
 
 import SwiftUI
 
-struct LoginFormView: View {
-    @ObservedObject public var user: DotUser
+struct ResetPasswordView: View {
+    @StateObject var user = DotUser()
     
     var body: some View {
         ZStack {
@@ -20,7 +20,7 @@ struct LoginFormView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        Text("Bienvenido, que gusto verte de nuevo.")
+                        Text("¿Olvidaste tu contraseña?")
                             .font(.title)
                             .bold()
                             .foregroundColor(Color.AppColors.text)
@@ -29,34 +29,30 @@ struct LoginFormView: View {
                     .padding(.top)
                     .padding(.horizontal)
                     
+                    HStack {
+                        Text("Ingresa tu dirección de correo electrónico y te enviaremos un enlace para que puedas restablecer tu contraseña.")
+                            .foregroundColor(Color.AppColors.text)
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 1)
+                    .padding(.bottom)
+                    
                     VStack {
                         TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
                         
-                        PasswordInputView(password: $user.password, label: "Password")
-                            .padding(.top)
-                        
-                        
-                        CustomButtonView(label: "Login", type: .primary) {
-                            user.login()
+                        CustomButtonView(label: "Enviar", type: .primary) {
+                            user.resetPassword()
                         }
                         .padding(.top, 40)
-                        
-                        NavigationLink(destination: ResetPasswordView()) {
-                            Text("¿Olvidaste tu contraseña?")
-                                .font(.title2)
-                                .foregroundColor(Color.AppColors.text)
-                        }
-                        .padding(.top)
-                        
                     }
                     .padding()
                 }
-                .navigationBarTitle("", displayMode: .inline)
             }
         }
     }
 }
 
 #Preview {
-    LoginFormView(user: DotUser())
+    ResetPasswordView()
 }

@@ -20,12 +20,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct DOTApp: App {
     // register app delegate for Firebase setup
-  @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            AuthenticationView()
         }
     }
 }

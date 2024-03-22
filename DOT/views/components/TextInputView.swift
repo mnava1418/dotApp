@@ -27,7 +27,7 @@ struct TextInputView: View {
                 .keyboardType(self.keyboardType)
                 .padding()
                 .background(Color.AppColors.text)
-                .cornerRadius(20.0)
+                .cornerRadius(Constants.View.cornerRadius)
         }
     }
 }

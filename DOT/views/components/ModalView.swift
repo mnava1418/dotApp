@@ -41,7 +41,7 @@ struct ModalView: View {
             }
             .frame(maxWidth: .infinity)
             .background(Color.AppColors.darkContrast)
-            .cornerRadius(20)
+            .cornerRadius(Constants.View.cornerRadius)
             .shadow(radius: 10)
             .padding()
             
