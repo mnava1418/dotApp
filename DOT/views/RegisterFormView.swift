@@ -9,8 +9,7 @@ import SwiftUI
 
 struct RegisterFormView: View {
     @ObservedObject public var user: DotUser
-    @ObservedObject public var modal: Modal
-    @Binding public var inLoginMode: Bool
+    @StateObject private var modal: Modal = Modal()
     
     var body: some View {
         ZStack {
@@ -47,10 +46,6 @@ struct RegisterFormView: View {
                                 AppStatus.shared.isProcessing = false
                                 
                                 modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: result ? "Cerrar" : "Reintentar")
-                                
-                                if(result) {
-                                    inLoginMode.toggle()
-                                }
                             }
                         }
                         .padding(.top, 40)
@@ -59,10 +54,16 @@ struct RegisterFormView: View {
                 }
                 .navigationBarTitle("", displayMode: .inline)
             }
+            
+            if(modal.show) {
+                ModalView(onAction: {
+                    modal.show = false
+                }, title: modal.title, message: modal.text, btnLabel: modal.btnLabel, align: .bottom)
+            }
         }
     }
 }
 
 #Preview {
-    RegisterFormView(user: DotUser(), modal: Modal(), inLoginMode: .constant(false))
+    RegisterFormView(user: DotUser())
 }

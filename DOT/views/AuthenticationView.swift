@@ -9,8 +9,6 @@ import SwiftUI
 
 struct AuthenticationView: View {
     @StateObject private var user = DotUser()
-    @StateObject private var modal = Modal()
-    @State private var inLoginMode = true
     
     init() {
         let appearance = UINavigationBarAppearance()
@@ -49,7 +47,7 @@ struct AuthenticationView: View {
                                 .padding()
                         }
 
-                        NavigationLink(destination: RegisterFormView(user: user, modal: modal, inLoginMode: $inLoginMode)) {
+                        NavigationLink(destination: RegisterFormView(user: user)) {
                             NavigationLinkButton(label: "Regístrate", type: .primary)
                                 .padding()
                         }
