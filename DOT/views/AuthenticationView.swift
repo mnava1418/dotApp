@@ -26,44 +26,42 @@ struct AuthenticationView: View {
     }
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.contrast]),
-                                   startPoint: .topLeading,
-                                   endPoint: .bottomTrailing)
-                        .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            
-            NavigationView {
-                ZStack {
-                    LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.contrast]),
-                                           startPoint: .topLeading,
-                                           endPoint: .bottomTrailing)
-                                .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            ZStack {
+                Image("fondo")
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .edgesIgnoringSafeArea(.all)
+                                
+                VStack {
+                    TypingTextView(fullText: "Hola DOT...", textFont: .largeTitle, textColor: Color.AppColors.text)
+                        .bold()
+                    
+                    Image("dot")
+                        .resizable()
+                        .frame(width: 150, height: 150)
+                        .padding()
                     
                     VStack {
-                        TypingTextView(fullText: "Hola DOT...", textFont: .largeTitle, textColor: Color.AppColors.text)
-                            .bold()
-                        
-                        Image("dot")
-                            .resizable()
-                            .frame(width: 150, height: 150)
-                            .padding()
-                        
                         NavigationLink(destination: LoginFormView(user: user)) {
                             NavigationLinkButton(label: "Login", type: .primary)
                                 .padding()
                         }
-                        
+
                         NavigationLink(destination: RegisterFormView(user: user, modal: modal, inLoginMode: $inLoginMode)) {
                             NavigationLinkButton(label: "Regístrate", type: .primary)
                                 .padding()
                         }
                     }
-                    .navigationBarTitle("", displayMode: .inline)
+                    .frame(maxWidth: 350)
                 }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color.black.opacity(0.5))
             }
-            .tint(Color.AppColors.text)
-            .padding(.horizontal)
+            .navigationBarTitle("", displayMode: .inline)
         }
+        .tint(Color.AppColors.text)
     }
 }
 

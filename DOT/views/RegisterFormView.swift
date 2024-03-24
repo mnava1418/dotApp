@@ -14,7 +14,7 @@ struct RegisterFormView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.contrast]),
+            LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.main]),
                                    startPoint: .topLeading,
                                    endPoint: .bottomTrailing)
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
@@ -28,7 +28,6 @@ struct RegisterFormView: View {
                             .foregroundColor(Color.AppColors.text)
                         Spacer()
                     }
-                    .padding(.top)
                     .padding(.horizontal)
                     
                     VStack {
