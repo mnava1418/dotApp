@@ -30,4 +30,32 @@ struct AuthService {
             }
         }
     }
+    
+    public static func signIn (email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                AuthStatus.shared.isUserAuthenticated = false
+                return
+            }
+            
+            guard let user = authResult?.user else {
+                AuthStatus.shared.isUserAuthenticated = false
+                return
+            }
+            
+            AuthStatus.shared.isUserAuthenticated = true
+            setUserStatus(user: user)
+        }
+    }
+    
+    public static func signOut () {
+        try? Auth.auth().signOut()
+    }
+    
+    public static func setUserStatus (user: User) {
+        user.reload()
+        
+        AuthStatus.shared.isEmailVerified = user.isEmailVerified
+    }
 }

@@ -17,8 +17,8 @@ class DotUser: ObservableObject {
     private var errorMessage: String = ""
         
     public func login() {
-        if(validateUser(isNewUser: false)) {
-            print("Email: \(self.email), Password: \(self.password)")
+        if(validateUser(isNewUser: false)) {            
+            AuthService.signIn(email: email, password: password)
         } else {
             print("Invalid User")
         }

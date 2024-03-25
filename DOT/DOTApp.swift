@@ -24,7 +24,7 @@ struct DOTApp: App {
     
     var body: some Scene {
         WindowGroup {
-            AuthenticationView()
+            AppContentView()
         }
     }
 }
