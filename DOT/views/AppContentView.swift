@@ -12,7 +12,7 @@ struct AppContentView: View {
     @StateObject private var authStatus: AuthStatus = AuthStatus.shared
         
     var body: some View {
-        if(authStatus.isUserAuthenticated && authStatus.isEmailVerified) {
+        if(authStatus.isUserAuthenticated && authStatus.isEmailVerified && authStatus.isAccountActive) {
             MainView()
         } else {
             AuthenticationView()

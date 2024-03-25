@@ -17,7 +17,8 @@ class DotUser: ObservableObject {
     private var errorMessage: String = ""
         
     public func login() {
-        if(validateUser(isNewUser: false)) {            
+        AppStatus.shared.isProcessing = true
+        if(validateUser(isNewUser: false)) {
             AuthService.signIn(email: email, password: password)
         } else {
             print("Invalid User")

@@ -57,5 +57,6 @@ struct AuthService {
         user.reload()
         
         AuthStatus.shared.isEmailVerified = user.isEmailVerified
+        AccountService.isAccountActive(uid: user.uid)
     }
 }

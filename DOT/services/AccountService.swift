@@ -23,4 +23,17 @@ struct AccountService {
             }
         }
     }
+    
+    public static func isAccountActive(uid: String) {
+        let ref = Database.database().reference()
+        ref.child("users").child(uid).child("isActive").observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? Bool else {
+                AuthStatus.shared.isAccountActive = false
+                return
+            }
+            AuthStatus.shared.isAccountActive = value
+        }) { error in
+            AuthStatus.shared.isAccountActive = false
+        }
+    }
 }
