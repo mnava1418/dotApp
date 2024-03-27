@@ -50,7 +50,7 @@ struct LoginFormView: View {
                                 if let errorMessage = errorMessage {
                                     modalText = errorMessage
                                 } else if(AuthStatus.shared.isUserAuthenticated && !AuthStatus.shared.isEmailVerified) {
-                                    modalText = "Tu email no ha sido verificado."
+                                    modalText = "Tu email no ha sido verificado. ¿Quieres que reenviemos el correo de verificación?"
                                     modalLabel = "Reenviar"
                                 } else if(AuthStatus.shared.isUserAuthenticated && !AuthStatus.shared.isAccountActive) {
                                     modalText = "Tu cuenta no ha sido activada. Estamos procesando tu solicitud."
@@ -78,7 +78,7 @@ struct LoginFormView: View {
             if(modal.show) {
                 ModalView(onAction: {
                     if(AuthStatus.shared.isUserAuthenticated && !AuthStatus.shared.isEmailVerified) {
-                        print("Vamos a reenviar el correo")
+                        AuthService.sendVerificationEmail()
                     }
                     
                     modal.show = false

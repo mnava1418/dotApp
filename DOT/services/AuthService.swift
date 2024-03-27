@@ -65,4 +65,10 @@ struct AuthService {
             completion(result)
         }
     }
+    
+    public static func sendVerificationEmail () {
+        if let user = Auth.auth().currentUser {
+            user.sendEmailVerification()
+        }
+    }
 }
