@@ -53,6 +53,7 @@ struct LoginFormView: View {
                                     modalText = "Tu email no ha sido verificado. ¿Quieres que reenviemos el correo de verificación?"
                                     modalLabel = "Reenviar"
                                 } else if(AuthStatus.shared.isUserAuthenticated && !AuthStatus.shared.isAccountActive) {
+                                    AuthService.signOut()
                                     modalText = "Tu cuenta no ha sido activada. Estamos procesando tu solicitud."
                                     modalLabel = "Ok"
                                 }
