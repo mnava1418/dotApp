@@ -16,11 +16,15 @@ class DotUser: ObservableObject {
     //Validation
     private var errorMessage: String = ""
         
-    public func login() {
+    public func login(completion: @escaping(Bool, String?) -> Void) {
+        AppStatus.shared.isProcessing = true
+        
         if(validateUser(isNewUser: false)) {
-            print("Email: \(self.email), Password: \(self.password)")
+            AuthService.signIn(email: email, password: password) { result in
+                completion(result, nil)
+            }
         } else {
-            print("Invalid User")
+            completion(false, self.errorMessage)
         }
     }
     
@@ -45,8 +49,15 @@ class DotUser: ObservableObject {
         }
     }
     
-    public func resetPassword() {
-        print("Reset Password")
+    public func resetPassword(completion: @escaping (Bool, String) -> Void) {
+        AppStatus.shared.isProcessing = true
+        
+        if(isValidEmail()) {
+            AuthService.resetPassword(email: email)
+            completion(true, "Hemos enviado un correo a \(email) para que puedas recuperar tu contraseña.")
+        } else {
+            completion(false, errorMessage)
+        }
     }
     
     //Functions to validate user data
@@ -83,7 +94,7 @@ class DotUser: ObservableObject {
         let result = emailPred.evaluate(with: self.email)
         
         if(!result) {
-            self.errorMessage = "Todos los campos son obligatorios."
+            self.errorMessage = "El email no es válido."
         }
         
         return result

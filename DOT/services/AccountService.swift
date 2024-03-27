@@ -23,4 +23,20 @@ struct AccountService {
             }
         }
     }
+    
+    public static func isAccountActive(uid: String, completion: @escaping(Bool) -> Void) {
+        let ref = Database.database().reference()
+        ref.child("users").child(uid).child("isActive").observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? Bool else {
+                AuthStatus.shared.isAccountActive = false
+                completion(false)
+                return
+            }
+            AuthStatus.shared.isAccountActive = value
+            completion(value)
+        }) { error in
+            AuthStatus.shared.isAccountActive = false
+            completion(false)
+        }
+    }
 }

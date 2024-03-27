@@ -20,6 +20,10 @@
 		50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */; };
 		50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */; };
 		50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */; };
+		503468112BB0EB8500DBD606 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468102BB0EB8500DBD606 /* MainView.swift */; };
+		503468142BB0EC6000DBD606 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468132BB0EC6000DBD606 /* AuthController.swift */; };
+		503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468152BB0EE8100DBD606 /* AuthStatus.swift */; };
+		503468182BB0F2B700DBD606 /* AppContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468172BB0F2B700DBD606 /* AppContentView.swift */; };
 		506C2F8F2B9FCE29002998B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 506C2F8E2B9FCE29002998B3 /* GoogleService-Info.plist */; };
 		506C2F922B9FCF9D002998B3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2F912B9FCF9D002998B3 /* FirebaseAuth */; };
 		506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F942B9FFA8B002998B3 /* AppStatus.swift */; };
@@ -47,6 +51,10 @@
 		50255AEB2B9C1C8600FD3DD1 /* PasswordInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordInputView.swift; sourceTree = "<group>"; };
 		50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormView.swift; sourceTree = "<group>"; };
 		50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFormView.swift; sourceTree = "<group>"; };
+		503468102BB0EB8500DBD606 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		503468132BB0EC6000DBD606 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
+		503468152BB0EE8100DBD606 /* AuthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatus.swift; sourceTree = "<group>"; };
+		503468172BB0F2B700DBD606 /* AppContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentView.swift; sourceTree = "<group>"; };
 		506C2F8E2B9FCE29002998B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		506C2F942B9FFA8B002998B3 /* AppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
@@ -99,8 +107,9 @@
 		50255AD02B993D1300FD3DD1 /* DOT */ = {
 			isa = PBXGroup;
 			children = (
+				503468122BB0EC2800DBD606 /* controllers */,
 				506C2F962BA126C7002998B3 /* services */,
-				506C2F932B9FFA78002998B3 /* utils */,
+				506C2F932B9FFA78002998B3 /* store */,
 				506C2F8E2B9FCE29002998B3 /* GoogleService-Info.plist */,
 				500B0CFA2B9CE72400A00014 /* config */,
 				50255AE62B9C14F700FD3DD1 /* models */,
@@ -128,6 +137,8 @@
 				50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */,
 				50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */,
 				50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */,
+				503468102BB0EB8500DBD606 /* MainView.swift */,
+				503468172BB0F2B700DBD606 /* AppContentView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -154,12 +165,21 @@
 			path = models;
 			sourceTree = "<group>";
 		};
-		506C2F932B9FFA78002998B3 /* utils */ = {
+		503468122BB0EC2800DBD606 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				503468132BB0EC6000DBD606 /* AuthController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		506C2F932B9FFA78002998B3 /* store */ = {
 			isa = PBXGroup;
 			children = (
 				506C2F942B9FFA8B002998B3 /* AppStatus.swift */,
+				503468152BB0EE8100DBD606 /* AuthStatus.swift */,
 			);
-			path = utils;
+			path = store;
 			sourceTree = "<group>";
 		};
 		506C2F962BA126C7002998B3 /* services */ = {
@@ -261,17 +281,21 @@
 				500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */,
 				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
 				506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */,
+				503468112BB0EB8500DBD606 /* MainView.swift in Sources */,
 				506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */,
 				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
 				50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */,
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
+				503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */,
 				50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
 				500B0CF72B9CCA7700A00014 /* ModalView.swift in Sources */,
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,
 				50255AE82B9C150E00FD3DD1 /* DotUser.swift in Sources */,
+				503468182BB0F2B700DBD606 /* AppContentView.swift in Sources */,
 				50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */,
 				506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */,
+				503468142BB0EC6000DBD606 /* AuthController.swift in Sources */,
 				50255AE52B9C0E3300FD3DD1 /* TextInputView.swift in Sources */,
 				500B0CFC2B9CE73600A00014 /* Enums.swift in Sources */,
 			);

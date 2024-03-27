@@ -14,6 +14,8 @@ struct ModalView: View {
     public let btnLabel: String
     public let align: ModalAlign
     
+    @ObservedObject var modal: Modal
+    
     var body: some View {
         VStack {
             if(align == .bottom || align == .center) {
@@ -52,12 +54,11 @@ struct ModalView: View {
         .background(
             Color.black.opacity(0.4)
                 .edgesIgnoringSafeArea(.all)
-            //In case you need it in future
-            /*.onTapGesture {
+            .onTapGesture {
                 withAnimation {
-                    onAction()
+                    modal.show = false
                 }
-            }*/
+            }
         )
     }
 }
@@ -65,6 +66,6 @@ struct ModalView: View {
 #Preview {
     ModalView(onAction: {
         print("Modal Action")
-    }, title: "Modal Title", message: "Modal text", btnLabel: "Modal BTN", align: .bottom)
+    }, title: "Modal Title", message: "Modal text", btnLabel: "Modal BTN", align: .bottom, modal: Modal())
 }
 
