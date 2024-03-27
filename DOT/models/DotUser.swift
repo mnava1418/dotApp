@@ -16,12 +16,15 @@ class DotUser: ObservableObject {
     //Validation
     private var errorMessage: String = ""
         
-    public func login() {
+    public func login(completion: @escaping(Bool, String?) -> Void) {
         AppStatus.shared.isProcessing = true
+        
         if(validateUser(isNewUser: false)) {
-            AuthService.signIn(email: email, password: password)
+            AuthService.signIn(email: email, password: password) { result in
+                completion(result, nil)
+            }
         } else {
-            print("Invalid User")
+            completion(false, self.errorMessage)
         }
     }
     

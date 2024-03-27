@@ -31,32 +31,38 @@ struct AuthService {
         }
     }
     
-    public static func signIn (email: String, password: String) {
+    public static func signIn (email: String, password: String, completion: @escaping(Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
-            if let error = error {
-                print(error.localizedDescription)
+            if error != nil {
                 AuthStatus.shared.isUserAuthenticated = false
+                completion(false)
                 return
             }
             
             guard let user = authResult?.user else {
                 AuthStatus.shared.isUserAuthenticated = false
+                completion(false)
                 return
             }
             
             AuthStatus.shared.isUserAuthenticated = true
-            setUserStatus(user: user)
+            setUserStatus(user: user) { result in
+                completion(result)
+            }
         }
     }
     
     public static func signOut () {
         try? Auth.auth().signOut()
+        AuthStatus.shared.reset()
     }
     
-    public static func setUserStatus (user: User) {
+    public static func setUserStatus (user: User, completion: @escaping(Bool) -> Void) {
         user.reload()
         
         AuthStatus.shared.isEmailVerified = user.isEmailVerified
-        AccountService.isAccountActive(uid: user.uid)
+        AccountService.isAccountActive(uid: user.uid) { result in
+            completion(result)
+        }
     }
 }

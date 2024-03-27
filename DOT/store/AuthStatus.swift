@@ -15,4 +15,10 @@ class AuthStatus: ObservableObject {
     static let shared = AuthStatus()
     
     private init() {}
+    
+    public func reset () {
+        isUserAuthenticated = false
+        isEmailVerified = false
+        isAccountActive = false
+    }
 }

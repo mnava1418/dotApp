@@ -58,7 +58,7 @@ struct RegisterFormView: View {
             if(modal.show) {
                 ModalView(onAction: {
                     modal.show = false
-                }, title: modal.title, message: modal.text, btnLabel: modal.btnLabel, align: .bottom)
+                }, title: modal.title, message: modal.text, btnLabel: modal.btnLabel, align: .bottom, modal: modal)
             }
         }
     }

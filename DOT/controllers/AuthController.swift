@@ -20,7 +20,7 @@ class AuthController {
            }
            
            AuthStatus.shared.isUserAuthenticated = true
-           AuthService.setUserStatus(user: user)
+           AuthService.setUserStatus(user: user) {result in}
        }
     }
 
