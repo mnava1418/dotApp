@@ -62,7 +62,7 @@ struct LoginFormView: View {
                         }
                         .padding(.top, 40)
                         
-                        NavigationLink(destination: ResetPasswordView()) {
+                        NavigationLink(destination: ResetPasswordView(user: user)) {
                             Text("¿Olvidaste tu contraseña?")
                                 .font(.title2)
                                 .foregroundColor(Color.AppColors.text)

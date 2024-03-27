@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ResetPasswordView: View {
-    @StateObject var user = DotUser()
+    @ObservedObject public var user: DotUser
+    @StateObject private var modal = Modal()
     
     var body: some View {
         ZStack {
@@ -41,17 +42,27 @@ struct ResetPasswordView: View {
                         TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
                         
                         CustomButtonView(label: "Enviar", type: .primary) {
-                            user.resetPassword()
+                            user.resetPassword() {(result, message) in
+                                AppStatus.shared.isProcessing = false
+                                
+                                modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: result ? "Cerrar" : "Reintentar")
+                            }
                         }
                         .padding(.top, 40)
                     }
                     .padding()
                 }
             }
+            
+            if(modal.show) {
+                ModalView(onAction: {
+                    modal.show = false
+                }, title: modal.title, message: modal.text, btnLabel: modal.btnLabel, align: .bottom, modal: modal)
+            }
         }
     }
 }
 
 #Preview {
-    ResetPasswordView()
+    ResetPasswordView(user: DotUser())
 }
