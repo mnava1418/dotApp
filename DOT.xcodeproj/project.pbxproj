@@ -30,6 +30,7 @@
 		506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F992BA14A77002998B3 /* Modal.swift */; };
 		506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F9B2BA7D370002998B3 /* AccountService.swift */; };
 		506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2FA02BA928BB002998B3 /* FirebaseDatabase */; };
+		50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */; };
 		50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3A2BACF3A70028B956 /* Constants.swift */; };
 		50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */; };
 		50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */; };
@@ -58,6 +59,7 @@
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		506C2F992BA14A77002998B3 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		506C2F9B2BA7D370002998B3 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCodeView.swift; sourceTree = "<group>"; };
 		50F1FA3A2BACF3A70028B956 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkButton.swift; sourceTree = "<group>"; };
 		50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */,
 				50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */,
 				50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */,
+				50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */,
 				50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */,
 				503468102BB0EB8500DBD606 /* MainView.swift */,
 				503468172BB0F2B700DBD606 /* AppContentView.swift */,
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */,
+				50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */,
 				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
 				500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */,
 				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
