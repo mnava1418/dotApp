@@ -24,13 +24,13 @@
 		503468142BB0EC6000DBD606 /* AuthController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468132BB0EC6000DBD606 /* AuthController.swift */; };
 		503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468152BB0EE8100DBD606 /* AuthStatus.swift */; };
 		503468182BB0F2B700DBD606 /* AppContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503468172BB0F2B700DBD606 /* AppContentView.swift */; };
-		506C2F8F2B9FCE29002998B3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 506C2F8E2B9FCE29002998B3 /* GoogleService-Info.plist */; };
 		506C2F922B9FCF9D002998B3 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2F912B9FCF9D002998B3 /* FirebaseAuth */; };
 		506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F942B9FFA8B002998B3 /* AppStatus.swift */; };
 		506C2F982BA126DE002998B3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F972BA126DE002998B3 /* AuthService.swift */; };
 		506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F992BA14A77002998B3 /* Modal.swift */; };
 		506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F9B2BA7D370002998B3 /* AccountService.swift */; };
 		506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2FA02BA928BB002998B3 /* FirebaseDatabase */; };
+		50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */; };
 		50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3A2BACF3A70028B956 /* Constants.swift */; };
 		50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */; };
 		50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */; };
@@ -55,11 +55,11 @@
 		503468132BB0EC6000DBD606 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
 		503468152BB0EE8100DBD606 /* AuthStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthStatus.swift; sourceTree = "<group>"; };
 		503468172BB0F2B700DBD606 /* AppContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContentView.swift; sourceTree = "<group>"; };
-		506C2F8E2B9FCE29002998B3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		506C2F942B9FFA8B002998B3 /* AppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		506C2F992BA14A77002998B3 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		506C2F9B2BA7D370002998B3 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCodeView.swift; sourceTree = "<group>"; };
 		50F1FA3A2BACF3A70028B956 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkButton.swift; sourceTree = "<group>"; };
 		50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -110,7 +110,6 @@
 				503468122BB0EC2800DBD606 /* controllers */,
 				506C2F962BA126C7002998B3 /* services */,
 				506C2F932B9FFA78002998B3 /* store */,
-				506C2F8E2B9FCE29002998B3 /* GoogleService-Info.plist */,
 				500B0CFA2B9CE72400A00014 /* config */,
 				50255AE62B9C14F700FD3DD1 /* models */,
 				50255AE02B9BE74C00FD3DD1 /* views */,
@@ -136,6 +135,7 @@
 				50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */,
 				50255AEF2B9C209E00FD3DD1 /* LoginFormView.swift */,
 				50255AF12B9CAB7A00FD3DD1 /* RegisterFormView.swift */,
+				50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */,
 				50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */,
 				503468102BB0EB8500DBD606 /* MainView.swift */,
 				503468172BB0F2B700DBD606 /* AppContentView.swift */,
@@ -265,7 +265,6 @@
 			files = (
 				50255AD92B993D1400FD3DD1 /* Preview Assets.xcassets in Resources */,
 				50255AD62B993D1400FD3DD1 /* Assets.xcassets in Resources */,
-				506C2F8F2B9FCE29002998B3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */,
+				50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */,
 				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
 				500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */,
 				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
