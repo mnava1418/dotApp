@@ -11,4 +11,11 @@ struct Constants {
     struct View {
         static let cornerRadius = 20.0
     }    
+    
+    struct Endpoints {
+        struct AutService {
+            static let DOMAIN = "http://localhost:4041"
+            static let REQUEST_CODE = "/auth/users/requestCode"
+        }
+    }
 }
