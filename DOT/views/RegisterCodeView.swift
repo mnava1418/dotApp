@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterCodeView: View {
+    @ObservedObject public var user: DotUser
     @StateObject private var modal = Modal()
     
     var body: some View {
@@ -38,8 +39,14 @@ struct RegisterCodeView: View {
                     }
                     .padding()
                     
+                    TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
+                        .padding()
+                    
                     CustomButtonView(label: "Solicitar tu código", type: .primary) {
-                        modal.setModal(_title: "Ok", _text: "Hemos enviado tu solicitud. Una vez aprobada, recibirás un correo con instrucciones para continuar.", _btnLabel: "Cerrar")
+                        user.requestCode { result, message in
+                            AppStatus.shared.isProcessing = false
+                            modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: "Cerrar")
+                        }
                     }
                     .padding()
                     
@@ -69,5 +76,5 @@ struct RegisterCodeView: View {
 }
 
 #Preview {
-    RegisterCodeView()
+    RegisterCodeView(user: DotUser())
 }
