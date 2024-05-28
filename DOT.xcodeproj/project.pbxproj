@@ -30,6 +30,8 @@
 		506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F992BA14A77002998B3 /* Modal.swift */; };
 		506C2F9C2BA7D370002998B3 /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F9B2BA7D370002998B3 /* AccountService.swift */; };
 		506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2FA02BA928BB002998B3 /* FirebaseDatabase */; };
+		50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0AB1E2BF591DC00665539 /* RestService.swift */; };
+		50A0AB232C06A3B400665539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A0AB222C06A3B400665539 /* GoogleService-Info.plist */; };
 		50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */; };
 		50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3A2BACF3A70028B956 /* Constants.swift */; };
 		50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */; };
@@ -59,6 +61,8 @@
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		506C2F992BA14A77002998B3 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
 		506C2F9B2BA7D370002998B3 /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountService.swift; sourceTree = "<group>"; };
+		50A0AB1E2BF591DC00665539 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
+		50A0AB222C06A3B400665539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCodeView.swift; sourceTree = "<group>"; };
 		50F1FA3A2BACF3A70028B956 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkButton.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 		50255AC52B993D1300FD3DD1 = {
 			isa = PBXGroup;
 			children = (
+				50A0AB222C06A3B400665539 /* GoogleService-Info.plist */,
 				50255AD02B993D1300FD3DD1 /* DOT */,
 				50255ACF2B993D1300FD3DD1 /* Products */,
 				506C2F9D2BA7D7BA002998B3 /* Frameworks */,
@@ -187,6 +192,7 @@
 			children = (
 				506C2F972BA126DE002998B3 /* AuthService.swift */,
 				506C2F9B2BA7D370002998B3 /* AccountService.swift */,
+				50A0AB1E2BF591DC00665539 /* RestService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			files = (
 				50255AD92B993D1400FD3DD1 /* Preview Assets.xcassets in Resources */,
 				50255AD62B993D1400FD3DD1 /* Assets.xcassets in Resources */,
+				50A0AB232C06A3B400665539 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +293,7 @@
 				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
 				50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */,
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
+				50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */,
 				503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */,
 				50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
