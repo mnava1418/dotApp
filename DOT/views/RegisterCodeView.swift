@@ -11,6 +11,8 @@ struct RegisterCodeView: View {
     @ObservedObject public var user: DotUser
     @StateObject private var modal = Modal()
     
+    @State private var showStepTwo = true
+    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.main]),
@@ -43,26 +45,30 @@ struct RegisterCodeView: View {
                         .padding()
                     
                     CustomButtonView(label: "Solicitar tu código", type: .primary) {
+                        showStepTwo = false
                         user.requestCode { result, message in
                             AppStatus.shared.isProcessing = false
+                            showStepTwo = true
                             modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: "Cerrar")
                         }
                     }
                     .padding()
                     
-                    HStack {
-                        Spacer()
-                        Text("¿Ya tienes tu código?")
-                            .font(.title2)
-                            .foregroundColor(Color.AppColors.text)
-                        Spacer()
-                    }
-                    .padding()
-                    
-                    CustomButtonView(label: "Continuar", type: .primary) {
+                    if(showStepTwo) {
+                        HStack {
+                            Spacer()
+                            Text("¿Ya tienes tu código?")
+                                .font(.title2)
+                                .foregroundColor(Color.AppColors.text)
+                            Spacer()
+                        }
+                        .padding()
                         
+                        CustomButtonView(label: "Continuar", type: .primary) {
+                            
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
             }
             
