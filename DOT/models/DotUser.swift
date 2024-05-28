@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct RequestBody: Codable {
+    let email: String
+}
+
 class DotUser: ObservableObject {
     @Published var name: String = ""
     @Published var email: String = ""
@@ -22,6 +26,42 @@ class DotUser: ObservableObject {
         if(validateUser(isNewUser: false)) {
             AuthService.signIn(email: email, password: password) { result in
                 completion(result, nil)
+            }
+        } else {
+            completion(false, self.errorMessage)
+        }
+    }
+    
+    public func requestCode(completion: @escaping (Bool, String) -> Void) {
+        AppStatus.shared.isProcessing = true
+        
+        if(isValidEmail()) {
+            let urlString = Constants.Endpoints.AutService.DOMAIN + Constants.Endpoints.AutService.REQUEST_CODE
+            guard let url = URL(string: urlString) else {
+                completion(false, "Invalid URL")
+                return
+            }
+            
+            let requestBody = RequestBody(email: self.email)
+            do {
+                let requestJson = try JSONEncoder().encode(requestBody)
+                
+                RestService.post(url: url, body: requestJson) { statusCode, errorMessage, data in
+                    if let errorMessage = errorMessage {
+                        completion(false, errorMessage)
+                        return
+                    }
+                    
+                    guard let data = data, let message = data["message"] as? String else {
+                        completion(false, "Error inesperado. Intenta nuevamente.")
+                        return
+                    }
+                    
+                    completion(true, message)
+                }
+            } catch {
+                completion(false, "Unable to parse request data.")
+                return
             }
         } else {
             completion(false, self.errorMessage)
