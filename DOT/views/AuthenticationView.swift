@@ -47,7 +47,7 @@ struct AuthenticationView: View {
                                 .padding()
                         }
 
-                        NavigationLink(destination: RegisterCodeView()) {
+                        NavigationLink(destination: RegisterCodeView(user: user)) {
                             NavigationLinkButton(label: "Regístrate", type: .primary)
                                 .padding()
                         }
