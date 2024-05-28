@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct RegisterCodeView: View {
+    @ObservedObject public var user: DotUser
     @StateObject private var modal = Modal()
+    
+    @State private var showStepTwo = true
     
     var body: some View {
         ZStack {
@@ -38,24 +41,34 @@ struct RegisterCodeView: View {
                     }
                     .padding()
                     
+                    TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
+                        .padding()
+                    
                     CustomButtonView(label: "Solicitar tu código", type: .primary) {
-                        modal.setModal(_title: "Ok", _text: "Hemos enviado tu solicitud. Una vez aprobada, recibirás un correo con instrucciones para continuar.", _btnLabel: "Cerrar")
+                        showStepTwo = false
+                        user.requestCode { result, message in
+                            AppStatus.shared.isProcessing = false
+                            showStepTwo = true
+                            modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: "Cerrar")
+                        }
                     }
                     .padding()
                     
-                    HStack {
-                        Spacer()
-                        Text("¿Ya tienes tu código?")
-                            .font(.title2)
-                            .foregroundColor(Color.AppColors.text)
-                        Spacer()
-                    }
-                    .padding()
-                    
-                    CustomButtonView(label: "Continuar", type: .primary) {
+                    if(showStepTwo) {
+                        HStack {
+                            Spacer()
+                            Text("¿Ya tienes tu código?")
+                                .font(.title2)
+                                .foregroundColor(Color.AppColors.text)
+                            Spacer()
+                        }
+                        .padding()
                         
+                        CustomButtonView(label: "Continuar", type: .primary) {
+                            
+                        }
+                        .padding()
                     }
-                    .padding()
                 }
             }
             
@@ -69,5 +82,5 @@ struct RegisterCodeView: View {
 }
 
 #Preview {
-    RegisterCodeView()
+    RegisterCodeView(user: DotUser())
 }
