@@ -63,13 +63,17 @@ struct RegisterCodeView: View {
                             Spacer()
                         }
                         .padding()
+                        .padding(.top)
+                        .padding(.top)
                         
-                        CustomButtonView(label: "Continuar", type: .primary) {
-                            
-                        }
-                        .padding()
+                         NavigationLink(destination: ProvideRegistrationCodeView(user: user)) {
+                             NavigationLinkButton(label: "Continuar", type: .primary)
+                                 .padding()
+                         }
+                         
                     }
                 }
+                .navigationBarTitle("", displayMode: .inline)
             }
             
             if(modal.show) {
