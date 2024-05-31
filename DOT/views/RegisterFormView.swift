@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterFormView: View {
     @ObservedObject public var user: DotUser
     @StateObject private var modal: Modal = Modal()
+    @State private var registrationResult = false
     
     var body: some View {
         ZStack {
@@ -51,6 +52,7 @@ struct RegisterFormView: View {
                         CustomButtonView(label: "Regístrate", type: .primary) {
                             user.register { (result, message) in
                                 AppStatus.shared.isProcessing = false
+                                registrationResult = result
                                 
                                 modal.setModal(_title: result ? "Ok" : "Error", _text: message, _btnLabel: result ? "Cerrar" : "Reintentar")
                             }
@@ -65,6 +67,11 @@ struct RegisterFormView: View {
             if(modal.show) {
                 ModalView(onAction: {
                     modal.show = false
+                    
+                    if(registrationResult) {
+                        user.reset()
+                    }
+                    
                 }, title: modal.title, message: modal.text, btnLabel: modal.btnLabel, align: .bottom, modal: modal)
             }
         }

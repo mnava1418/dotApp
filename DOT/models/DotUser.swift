@@ -33,6 +33,15 @@ class DotUser: ObservableObject {
         }
     }
     
+    public func reset() {
+        name = ""
+        email = ""
+        password = ""
+        confirmPassword = ""
+        registrationCode = ""
+        errorMessage = ""
+    }
+    
     public func requestCode(completion: @escaping (Bool, String) -> Void) {
         AppStatus.shared.isProcessing = true
         
@@ -73,18 +82,7 @@ class DotUser: ObservableObject {
         AppStatus.shared.isProcessing = true
         
         if(validateUser(isNewUser: true)) {
-            AuthService.createUser(email: self.email, password: self.password, name: self.name) { (user, error) in
-                if let error = error {
-                    completion(false, error.localizedDescription)
-                    return
-                }
-                
-                if let user = user {
-                    user.sendEmailVerification()
-                }
-                
-                completion(true, "Cuenta creada. Revisa tu correo para activarla e inicia sesión.")
-            }
+            completion(true, "Cuenta creada. Revisa tu correo para activarla y regresa a la pantalla de inicio para iniciar sesión.")
         } else {
             completion(false, errorMessage)
         }
@@ -108,7 +106,7 @@ class DotUser: ObservableObject {
         if(!validateMandatoryFields(isNewUser: isNewUser)) {
             self.errorMessage = "Todos los campos son obligatorios."
             return false
-        } else if(!isValidEmail()) {
+        } else if(!isNewUser && !isValidEmail()) {
             self.errorMessage = "El email no es válido."
             return false
         } else if(isNewUser && !passwordsMatch()) {
@@ -120,10 +118,12 @@ class DotUser: ObservableObject {
     }
     
     private func validateMandatoryFields(isNewUser: Bool) -> Bool {
-        var result = !self.email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !self.password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        var result = !self.password.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         
         if(isNewUser) {
-            result = result && !self.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !self.confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            result = result && !self.registrationCode.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !self.name.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty && !self.confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        } else {
+            result = result && !self.email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         }
                 
         return result
