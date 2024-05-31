@@ -21,7 +21,7 @@ struct RegisterFormView: View {
             ScrollView {
                 VStack {
                     HStack {
-                        Text("Hola, regístrate para comenzar.")
+                        Text("Completa tu registro")
                             .font(.title)
                             .bold()
                             .foregroundColor(Color.AppColors.text)
@@ -29,11 +29,18 @@ struct RegisterFormView: View {
                     }
                     .padding(.horizontal)
                     
+                    HStack {
+                        Text("Paso 3: ")
+                            .bold()
+                            .foregroundColor(Color.AppColors.text) +
+                        Text("Completa el formulario para terminar tu registro. El correo electrónico que usaremos será el que proporcionaste al solicitar tu código de registro.")
+                            .foregroundColor(Color.AppColors.text)
+                        Spacer()
+                    }
+                    .padding()
+                    
                     VStack {
                         TextInputView(text: $user.name, label: "Nombre", keyboardType: .default)
-                        
-                        TextInputView(text: $user.email, label: "Email", keyboardType: .emailAddress)
-                            .padding(.top)
                         
                         PasswordInputView(password: $user.password, label: "Password")
                             .padding(.top)

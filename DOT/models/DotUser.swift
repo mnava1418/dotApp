@@ -16,6 +16,7 @@ class DotUser: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var confirmPassword: String = ""
+    @Published var registrationCode: String = ""
     
     //Validation
     private var errorMessage: String = ""
