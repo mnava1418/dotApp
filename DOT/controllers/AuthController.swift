@@ -19,8 +19,9 @@ class AuthController {
                return
            }
            
+           user.reload()
            AuthStatus.shared.isUserAuthenticated = true
-           AuthService.setUserStatus(user: user) {result in}
+           AuthStatus.shared.isEmailVerified = user.isEmailVerified
        }
     }
 
