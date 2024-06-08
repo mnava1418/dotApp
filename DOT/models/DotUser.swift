@@ -98,12 +98,17 @@ class DotUser: ObservableObject {
                 let requestJson = try JSONEncoder().encode(requestBody)
                 
                 RestService.post(url: url, body: requestJson, token: self.registrationCode) { statusCode, errorMessage, data in
+                    if statusCode == 401 {
+                        completion(false, "Tu código de registro no es válido. Intenta nuevamente o solicita uno nuevo.")
+                        return
+                    }
+                    
                     if let errorMessage = errorMessage {
                         completion(false, errorMessage)
                         return
                     }
                     
-                    guard let data = data, let message = data["message"] as? String else {
+                    guard let data = data, let _ = data["message"] as? String else {
                         completion(false, "Error inesperado. Intenta nuevamente.")
                         return
                     }
