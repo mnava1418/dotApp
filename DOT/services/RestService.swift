@@ -8,10 +8,15 @@
 import Foundation
 
 struct RestService {
-    public static func post(url: URL, body: Data, completion: @escaping(Int, String?, [String: Any]? ) -> Void) {
+    public static func post(url: URL, body: Data, token: String?, completion: @escaping(Int, String?, [String: Any]? ) -> Void) {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        if let token = token {
+            request.addValue(token, forHTTPHeaderField: "token")
+        }
+        
         request.httpBody = body
         
         let session = URLSession.shared

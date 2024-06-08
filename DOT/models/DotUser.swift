@@ -7,8 +7,13 @@
 
 import Foundation
 
-struct RequestBody: Codable {
+struct RequesCodetBody: Codable {
     let email: String
+}
+
+struct RegisterUserBody: Codable {
+    let password: String
+    let name: String
 }
 
 class DotUser: ObservableObject {
@@ -52,11 +57,11 @@ class DotUser: ObservableObject {
                 return
             }
             
-            let requestBody = RequestBody(email: self.email)
+            let requestBody = RequesCodetBody(email: self.email)
             do {
                 let requestJson = try JSONEncoder().encode(requestBody)
                 
-                RestService.post(url: url, body: requestJson) { statusCode, errorMessage, data in
+                RestService.post(url: url, body: requestJson, token: nil) { statusCode, errorMessage, data in
                     if let errorMessage = errorMessage {
                         completion(false, errorMessage)
                         return
@@ -82,7 +87,33 @@ class DotUser: ObservableObject {
         AppStatus.shared.isProcessing = true
         
         if(validateUser(isNewUser: true)) {
-            completion(true, "Cuenta creada. Revisa tu correo para activarla y regresa a la pantalla de inicio para iniciar sesión.")
+            let urlString = Constants.Endpoints.AutService.DOMAIN + Constants.Endpoints.AutService.REGISTER_USER
+            guard let url = URL(string: urlString) else {
+                completion(false, "Invalid URL")
+                return
+            }
+            
+            let requestBody = RegisterUserBody(password: self.password, name: self.name)
+            do {
+                let requestJson = try JSONEncoder().encode(requestBody)
+                
+                RestService.post(url: url, body: requestJson, token: self.registrationCode) { statusCode, errorMessage, data in
+                    if let errorMessage = errorMessage {
+                        completion(false, errorMessage)
+                        return
+                    }
+                    
+                    guard let data = data, let message = data["message"] as? String else {
+                        completion(false, "Error inesperado. Intenta nuevamente.")
+                        return
+                    }
+                    
+                    completion(true, "Cuenta creada. Revisa tu correo para activarla y regresa a la pantalla de inicio para iniciar sesión.")
+                }
+            } catch {
+                completion(false, "Unable to parse request data.")
+                return
+            }
         } else {
             completion(false, errorMessage)
         }

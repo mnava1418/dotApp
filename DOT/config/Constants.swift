@@ -16,6 +16,7 @@ struct Constants {
         struct AutService {
             static let DOMAIN = "http://localhost:4041"
             static let REQUEST_CODE = "/auth/users/requestCode"
+            static let REGISTER_USER = "/auth/users/register"
         }
     }
 }
