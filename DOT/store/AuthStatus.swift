@@ -10,7 +10,6 @@ import Foundation
 class AuthStatus: ObservableObject {
     @Published public var isUserAuthenticated: Bool = false
     @Published public var isEmailVerified: Bool = false
-    @Published public var isAccountActive: Bool = false
     
     static let shared = AuthStatus()
     
@@ -19,6 +18,5 @@ class AuthStatus: ObservableObject {
     public func reset () {
         isUserAuthenticated = false
         isEmailVerified = false
-        isAccountActive = false
     }
 }
