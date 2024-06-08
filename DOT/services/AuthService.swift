@@ -9,28 +9,6 @@ import Foundation
 import FirebaseAuth
 
 struct AuthService {
-    public static func createUser (email: String, password: String, name: String, completion: @escaping (User?, (any Error)?) -> Void) {
-        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
-            if let error = error {
-                completion(nil, error)
-                return
-            }
-            
-            guard let user = authResult?.user else {
-                completion(nil, NSError(domain: "AuthService", code: 0, userInfo: [NSLocalizedDescriptionKey : "No auth result found"]))
-                return
-            }
-            
-            AccountService.createAccount(uid: user.uid, name: name, email: email) { accountError in
-                if let accountError = accountError {
-                    completion(nil, accountError)
-                } else {
-                    completion(user, nil)
-                }
-            }
-        }
-    }
-    
     public static func signIn (email: String, password: String, completion: @escaping(Bool) -> Void) {
         Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
             if error != nil {
@@ -45,25 +23,16 @@ struct AuthService {
                 return
             }
             
+            user.reload()
             AuthStatus.shared.isUserAuthenticated = true
-            setUserStatus(user: user) { result in
-                completion(result)
-            }
+            AuthStatus.shared.isEmailVerified = user.isEmailVerified
+            completion(true)
         }
     }
     
     public static func signOut () {
         try? Auth.auth().signOut()
         AuthStatus.shared.reset()
-    }
-    
-    public static func setUserStatus (user: User, completion: @escaping(Bool) -> Void) {
-        user.reload()
-        
-        AuthStatus.shared.isEmailVerified = user.isEmailVerified
-        AccountService.isAccountActive(uid: user.uid) { result in
-            completion(result)
-        }
     }
     
     public static func sendVerificationEmail () {
