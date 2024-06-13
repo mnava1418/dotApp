@@ -30,6 +30,9 @@
 		506C2F982BA126DE002998B3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F972BA126DE002998B3 /* AuthService.swift */; };
 		506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506C2F992BA14A77002998B3 /* Modal.swift */; };
 		506C2FA12BA928BB002998B3 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 506C2FA02BA928BB002998B3 /* FirebaseDatabase */; };
+		507BB8202C1912DD001708B3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BB81F2C1912DD001708B3 /* HomeView.swift */; };
+		507BB8222C19152E001708B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BB8212C19152E001708B3 /* SettingsView.swift */; };
+		507BB8242C191614001708B3 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BB8232C191614001708B3 /* ChatView.swift */; };
 		50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0AB1E2BF591DC00665539 /* RestService.swift */; };
 		50A0AB232C06A3B400665539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A0AB222C06A3B400665539 /* GoogleService-Info.plist */; };
 		50A0AB252C06ABA100665539 /* ProvideRegistrationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */; };
@@ -62,6 +65,9 @@
 		506C2F942B9FFA8B002998B3 /* AppStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStatus.swift; sourceTree = "<group>"; };
 		506C2F972BA126DE002998B3 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		506C2F992BA14A77002998B3 /* Modal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modal.swift; sourceTree = "<group>"; };
+		507BB81F2C1912DD001708B3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		507BB8212C19152E001708B3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		507BB8232C191614001708B3 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		50A0AB1E2BF591DC00665539 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		50A0AB222C06A3B400665539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvideRegistrationCodeView.swift; sourceTree = "<group>"; };
@@ -145,8 +151,11 @@
 				50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */,
 				50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */,
 				50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */,
+				507BB8212C19152E001708B3 /* SettingsView.swift */,
+				507BB8232C191614001708B3 /* ChatView.swift */,
 				503468102BB0EB8500DBD606 /* MainView.swift */,
 				503468172BB0F2B700DBD606 /* AppContentView.swift */,
+				507BB81F2C1912DD001708B3 /* HomeView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -289,6 +298,7 @@
 				50A0AB252C06ABA100665539 /* ProvideRegistrationCodeView.swift in Sources */,
 				50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */,
 				50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */,
+				507BB8242C191614001708B3 /* ChatView.swift in Sources */,
 				50255AEC2B9C1C8600FD3DD1 /* PasswordInputView.swift in Sources */,
 				500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */,
 				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
@@ -300,11 +310,13 @@
 				50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */,
 				503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */,
 				50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */,
+				507BB8202C1912DD001708B3 /* HomeView.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
 				500B0CF72B9CCA7700A00014 /* ModalView.swift in Sources */,
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,
 				50255AE82B9C150E00FD3DD1 /* DotUser.swift in Sources */,
 				503468182BB0F2B700DBD606 /* AppContentView.swift in Sources */,
+				507BB8222C19152E001708B3 /* SettingsView.swift in Sources */,
 				50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */,
 				506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */,
 				503468142BB0EC6000DBD606 /* AuthController.swift in Sources */,
