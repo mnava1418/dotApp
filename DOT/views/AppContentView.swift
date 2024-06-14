@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AppContentView: View {
+    private var authController: AuthController = AuthController() //to add authentication listener
     @StateObject private var authStatus: AuthStatus = AuthStatus.shared
         
     var body: some View {
