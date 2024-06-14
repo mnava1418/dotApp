@@ -11,6 +11,13 @@
 		500B0CF72B9CCA7700A00014 /* ModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B0CF62B9CCA7700A00014 /* ModalView.swift */; };
 		500B0CF92B9CD04C00A00014 /* CustomButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B0CF82B9CD04C00A00014 /* CustomButtonView.swift */; };
 		500B0CFC2B9CE73600A00014 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500B0CFB2B9CE73600A00014 /* Enums.swift */; };
+		5012AD382C1BB1310002A5AA /* dotWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012AD372C1BB1310002A5AA /* dotWatchApp.swift */; };
+		5012AD3A2C1BB1310002A5AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012AD392C1BB1310002A5AA /* ContentView.swift */; };
+		5012AD3C2C1BB1330002A5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5012AD3B2C1BB1330002A5AA /* Assets.xcassets */; };
+		5012AD3F2C1BB1330002A5AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5012AD3E2C1BB1330002A5AA /* Preview Assets.xcassets */; };
+		5012AD422C1BB1330002A5AA /* DOT.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5012AD352C1BB1310002A5AA /* DOT.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5012AD482C1BB7400002A5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD52B993D1400FD3DD1 /* Assets.xcassets */; };
+		5012AD4C2C1BBE3D0002A5AA /* WatchConectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012AD4B2C1BBE3D0002A5AA /* WatchConectivityManager.swift */; };
 		50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD12B993D1300FD3DD1 /* DOTApp.swift */; };
 		50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */; };
 		50255AD62B993D1400FD3DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD52B993D1400FD3DD1 /* Assets.xcassets */; };
@@ -42,11 +49,41 @@
 		50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5012AD402C1BB1330002A5AA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 50255AC62B993D1300FD3DD1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5012AD342C1BB1310002A5AA;
+			remoteInfo = "dotWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5012AD432C1BB1330002A5AA /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				5012AD422C1BB1330002A5AA /* DOT.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5008F42F2C09474B005ABBF0 /* TextEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorView.swift; sourceTree = "<group>"; };
 		500B0CF62B9CCA7700A00014 /* ModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalView.swift; sourceTree = "<group>"; };
 		500B0CF82B9CD04C00A00014 /* CustomButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButtonView.swift; sourceTree = "<group>"; };
 		500B0CFB2B9CE73600A00014 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		5012AD352C1BB1310002A5AA /* DOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5012AD372C1BB1310002A5AA /* dotWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dotWatchApp.swift; sourceTree = "<group>"; };
+		5012AD392C1BB1310002A5AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5012AD3B2C1BB1330002A5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5012AD3E2C1BB1330002A5AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5012AD4B2C1BBE3D0002A5AA /* WatchConectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConectivityManager.swift; sourceTree = "<group>"; };
 		50255ACE2B993D1300FD3DD1 /* DOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50255AD12B993D1300FD3DD1 /* DOTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTApp.swift; sourceTree = "<group>"; };
 		50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -78,6 +115,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5012AD322C1BB1310002A5AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50255ACB2B993D1300FD3DD1 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,11 +143,31 @@
 			path = config;
 			sourceTree = "<group>";
 		};
+		5012AD362C1BB1310002A5AA /* dotWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				5012AD372C1BB1310002A5AA /* dotWatchApp.swift */,
+				5012AD392C1BB1310002A5AA /* ContentView.swift */,
+				5012AD3B2C1BB1330002A5AA /* Assets.xcassets */,
+				5012AD3D2C1BB1330002A5AA /* Preview Content */,
+			);
+			path = "dotWatch Watch App";
+			sourceTree = "<group>";
+		};
+		5012AD3D2C1BB1330002A5AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5012AD3E2C1BB1330002A5AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		50255AC52B993D1300FD3DD1 = {
 			isa = PBXGroup;
 			children = (
 				50A0AB222C06A3B400665539 /* GoogleService-Info.plist */,
 				50255AD02B993D1300FD3DD1 /* DOT */,
+				5012AD362C1BB1310002A5AA /* dotWatch Watch App */,
 				50255ACF2B993D1300FD3DD1 /* Products */,
 				506C2F9D2BA7D7BA002998B3 /* Frameworks */,
 			);
@@ -113,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				50255ACE2B993D1300FD3DD1 /* DOT.app */,
+				5012AD352C1BB1310002A5AA /* DOT.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -205,6 +270,7 @@
 			children = (
 				506C2F972BA126DE002998B3 /* AuthService.swift */,
 				50A0AB1E2BF591DC00665539 /* RestService.swift */,
+				5012AD4B2C1BBE3D0002A5AA /* WatchConectivityManager.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -219,6 +285,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5012AD342C1BB1310002A5AA /* dotWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5012AD462C1BB1330002A5AA /* Build configuration list for PBXNativeTarget "dotWatch Watch App" */;
+			buildPhases = (
+				5012AD312C1BB1310002A5AA /* Sources */,
+				5012AD322C1BB1310002A5AA /* Frameworks */,
+				5012AD332C1BB1310002A5AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "dotWatch Watch App";
+			productName = "dotWatch Watch App";
+			productReference = 5012AD352C1BB1310002A5AA /* DOT.app */;
+			productType = "com.apple.product-type.application";
+		};
 		50255ACD2B993D1300FD3DD1 /* DOT */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 50255ADC2B993D1400FD3DD1 /* Build configuration list for PBXNativeTarget "DOT" */;
@@ -226,10 +309,12 @@
 				50255ACA2B993D1300FD3DD1 /* Sources */,
 				50255ACB2B993D1300FD3DD1 /* Frameworks */,
 				50255ACC2B993D1300FD3DD1 /* Resources */,
+				5012AD432C1BB1330002A5AA /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5012AD412C1BB1330002A5AA /* PBXTargetDependency */,
 			);
 			name = DOT;
 			packageProductDependencies = (
@@ -247,9 +332,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1520;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
+					5012AD342C1BB1310002A5AA = {
+						CreatedOnToolsVersion = 15.4;
+					};
 					50255ACD2B993D1300FD3DD1 = {
 						CreatedOnToolsVersion = 15.2;
 					};
@@ -272,11 +360,22 @@
 			projectRoot = "";
 			targets = (
 				50255ACD2B993D1300FD3DD1 /* DOT */,
+				5012AD342C1BB1310002A5AA /* dotWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5012AD332C1BB1310002A5AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5012AD3F2C1BB1330002A5AA /* Preview Assets.xcassets in Resources */,
+				5012AD482C1BB7400002A5AA /* Assets.xcassets in Resources */,
+				5012AD3C2C1BB1330002A5AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50255ACC2B993D1300FD3DD1 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +389,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5012AD312C1BB1310002A5AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5012AD3A2C1BB1310002A5AA /* ContentView.swift in Sources */,
+				5012AD382C1BB1310002A5AA /* dotWatchApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		50255ACA2B993D1300FD3DD1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -309,6 +417,7 @@
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
 				50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */,
 				503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */,
+				5012AD4C2C1BBE3D0002A5AA /* WatchConectivityManager.swift in Sources */,
 				50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */,
 				507BB8202C1912DD001708B3 /* HomeView.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
@@ -327,7 +436,73 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5012AD412C1BB1330002A5AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5012AD342C1BB1310002A5AA /* dotWatch Watch App */;
+			targetProxy = 5012AD402C1BB1330002A5AA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		5012AD442C1BB1330002A5AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dotWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.namart.dotai;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.namart.dotai.watchkitapp;
+				PRODUCT_NAME = DOT;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Debug;
+		};
+		5012AD452C1BB1330002A5AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"dotWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = VGUJZ39WN5;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.namart.dotai;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.namart.dotai.watchkitapp;
+				PRODUCT_NAME = DOT;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.5;
+			};
+			name = Release;
+		};
 		50255ADA2B993D1400FD3DD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -450,6 +625,7 @@
 		50255ADD2B993D1400FD3DD1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -458,11 +634,12 @@
 				DEVELOPMENT_TEAM = VGUJZ39WN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DOT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -470,15 +647,20 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.namart.dotai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		50255ADE2B993D1400FD3DD1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -487,11 +669,12 @@
 				DEVELOPMENT_TEAM = VGUJZ39WN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = DOT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -499,15 +682,28 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.namart.dotai;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5012AD462C1BB1330002A5AA /* Build configuration list for PBXNativeTarget "dotWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5012AD442C1BB1330002A5AA /* Debug */,
+				5012AD452C1BB1330002A5AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		50255AC92B993D1300FD3DD1 /* Build configuration list for PBXProject "DOT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
