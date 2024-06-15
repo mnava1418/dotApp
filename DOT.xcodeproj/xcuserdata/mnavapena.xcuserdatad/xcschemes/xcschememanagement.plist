@@ -7,7 +7,7 @@
 		<key>DOT.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>1</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Promises (Playground) 1.xcscheme</key>
 		<dict>
@@ -28,7 +28,7 @@
 			<key>isShown</key>
 			<false/>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>1</integer>
 		</dict>
 		<key>dotWatch Watch App (Notification).xcscheme_^#shared#^_</key>
 		<dict>
@@ -38,7 +38,20 @@
 		<key>dotWatch Watch App.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>2</integer>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>5012AD342C1BB1310002A5AA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>50255ACD2B993D1300FD3DD1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>
