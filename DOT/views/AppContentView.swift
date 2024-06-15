@@ -10,6 +10,7 @@ import SwiftUI
 struct AppContentView: View {
     private var authController: AuthController = AuthController() //to add authentication listener
     @StateObject private var authStatus: AuthStatus = AuthStatus.shared
+    private var connectivityManager: WatchConnectivityManager = WatchConnectivityManager.shared
         
     var body: some View {
         if(authStatus.isUserAuthenticated && authStatus.isEmailVerified) {
@@ -17,20 +18,16 @@ struct AppContentView: View {
                 MainView()
             }
             .onAppear{
-                sendMessageToWatch(isAuthenticated: true)
+                connectivityManager.sendMessage(message: ["isAuthenticated": true])
             }
         } else {
             VStack {
                 AuthenticationView()
             }
             .onAppear{
-                sendMessageToWatch(isAuthenticated: false)
+                connectivityManager.sendMessage(message: ["isAuthenticated": false])
             }
         }
-    }
-    
-    private func sendMessageToWatch(isAuthenticated: Bool) {
-        WatchConnectivityManager.shared.sendMessage(message: ["isAuthenticated": isAuthenticated])
     }
 }
 

@@ -10,7 +10,7 @@ import FirebaseAuth
 
 struct HomeView: View {
     @State private var user:User? = nil
-    @State private var userName = "Martin"
+    @State private var userName = ""
     
     var body: some View {
         ZStack {
@@ -34,8 +34,6 @@ struct HomeView: View {
                 
                 VStack {
                     Button(action: {
-                        // Acción del botón
-                        print("Botón presionado")
                     }) {
                         Image("dot")
                          .resizable()

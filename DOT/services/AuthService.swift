@@ -48,4 +48,17 @@ struct AuthService {
             }
         }
     }
+    
+    public static func getAuthStatus () -> [String: Any] {
+        guard let currentUser = Auth.auth().currentUser else {
+            return ["isAuthenticated": false]
+        }
+        
+        var authStatus:[String: Any] = [:]
+        authStatus["isAuthenticated"] = currentUser.isEmailVerified
+        authStatus["displayName"] = currentUser.displayName
+        authStatus["email"] = currentUser.email
+        
+        return authStatus
+    }
 }

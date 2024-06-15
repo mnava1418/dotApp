@@ -1,12 +1,13 @@
 //
-//  WatchConectivityManager.swift
+//  WatchConnectivityManager.swift
 //  DOT
 //
-//  Created by Martin Nava on 13/06/24.
+//  Created by Martin Nava on 14/06/24.
 //
 
 import Foundation
 import WatchConnectivity
+import FirebaseAuth
 
 class WatchConnectivityManager: NSObject, WCSessionDelegate {
     static let shared = WatchConnectivityManager()
@@ -26,6 +27,18 @@ class WatchConnectivityManager: NSObject, WCSessionDelegate {
                 print("Error sending message: \(error.localizedDescription)")
             }
         }
+    }
+    
+    func session(_ session: WCSession, didReceiveMessage message: [String : Any], replyHandler: @escaping ([String : Any]) -> Void) {
+            replyHandler(prepareResponse(message: message))
+    }
+    
+    private func prepareResponse(message: [String: Any]) -> [String: Any] {
+        if message["request"] as? String == "authStatus" {
+            let authStatus = AuthService.getAuthStatus()
+            return authStatus
+        }
+        return [:]
     }
     
     // WCSessionDelegate methods
