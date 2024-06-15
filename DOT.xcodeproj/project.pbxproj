@@ -17,7 +17,6 @@
 		5012AD3F2C1BB1330002A5AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5012AD3E2C1BB1330002A5AA /* Preview Assets.xcassets */; };
 		5012AD422C1BB1330002A5AA /* DOT.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5012AD352C1BB1310002A5AA /* DOT.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5012AD482C1BB7400002A5AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD52B993D1400FD3DD1 /* Assets.xcassets */; };
-		5012AD4C2C1BBE3D0002A5AA /* WatchConectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5012AD4B2C1BBE3D0002A5AA /* WatchConectivityManager.swift */; };
 		50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD12B993D1300FD3DD1 /* DOTApp.swift */; };
 		50255AD42B993D1300FD3DD1 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */; };
 		50255AD62B993D1400FD3DD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50255AD52B993D1400FD3DD1 /* Assets.xcassets */; };
@@ -40,10 +39,14 @@
 		507BB8202C1912DD001708B3 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BB81F2C1912DD001708B3 /* HomeView.swift */; };
 		507BB8222C19152E001708B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BB8212C19152E001708B3 /* SettingsView.swift */; };
 		507BB8242C191614001708B3 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507BB8232C191614001708B3 /* ChatView.swift */; };
+		509F83612C1E4C9E00C658AC /* AppObserverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F83602C1E4C9E00C658AC /* AppObserverService.swift */; };
+		509F83632C1E4DDF00C658AC /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509F83622C1E4DDF00C658AC /* AuthService.swift */; };
 		50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0AB1E2BF591DC00665539 /* RestService.swift */; };
 		50A0AB232C06A3B400665539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A0AB222C06A3B400665539 /* GoogleService-Info.plist */; };
 		50A0AB252C06ABA100665539 /* ProvideRegistrationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */; };
 		50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */; };
+		50EF5D742C1D3B9200BD31D9 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF5D732C1D3B9200BD31D9 /* WatchConnectivityManager.swift */; };
+		50EF5D782C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF5D772C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift */; };
 		50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3A2BACF3A70028B956 /* Constants.swift */; };
 		50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */; };
 		50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */; };
@@ -83,7 +86,6 @@
 		5012AD392C1BB1310002A5AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5012AD3B2C1BB1330002A5AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5012AD3E2C1BB1330002A5AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5012AD4B2C1BBE3D0002A5AA /* WatchConectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConectivityManager.swift; sourceTree = "<group>"; };
 		50255ACE2B993D1300FD3DD1 /* DOT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DOT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50255AD12B993D1300FD3DD1 /* DOTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DOTApp.swift; sourceTree = "<group>"; };
 		50255AD32B993D1300FD3DD1 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
@@ -105,10 +107,16 @@
 		507BB81F2C1912DD001708B3 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		507BB8212C19152E001708B3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		507BB8232C191614001708B3 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		509F83602C1E4C9E00C658AC /* AppObserverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppObserverService.swift; sourceTree = "<group>"; };
+		509F83622C1E4DDF00C658AC /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		50A0AB1E2BF591DC00665539 /* RestService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestService.swift; sourceTree = "<group>"; };
 		50A0AB222C06A3B400665539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvideRegistrationCodeView.swift; sourceTree = "<group>"; };
 		50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCodeView.swift; sourceTree = "<group>"; };
+		50EF5D732C1D3B9200BD31D9 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
+		50EF5D752C1D434F00BD31D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		50EF5D762C1D439500BD31D9 /* dotWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "dotWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
+		50EF5D772C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityDelegate.swift; sourceTree = "<group>"; };
 		50F1FA3A2BACF3A70028B956 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		50F1FA3C2BACF4850028B956 /* NavigationLinkButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLinkButton.swift; sourceTree = "<group>"; };
 		50F1FA3E2BAD16E90028B956 /* ResetPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordView.swift; sourceTree = "<group>"; };
@@ -146,6 +154,8 @@
 		5012AD362C1BB1310002A5AA /* dotWatch Watch App */ = {
 			isa = PBXGroup;
 			children = (
+				50EF5D762C1D439500BD31D9 /* dotWatch-Watch-App-Info.plist */,
+				50EF5D702C1D332C00BD31D9 /* services */,
 				5012AD372C1BB1310002A5AA /* dotWatchApp.swift */,
 				5012AD392C1BB1310002A5AA /* ContentView.swift */,
 				5012AD3B2C1BB1330002A5AA /* Assets.xcassets */,
@@ -185,6 +195,7 @@
 		50255AD02B993D1300FD3DD1 /* DOT */ = {
 			isa = PBXGroup;
 			children = (
+				50EF5D752C1D434F00BD31D9 /* Info.plist */,
 				503468122BB0EC2800DBD606 /* controllers */,
 				506C2F962BA126C7002998B3 /* services */,
 				506C2F932B9FFA78002998B3 /* store */,
@@ -270,7 +281,7 @@
 			children = (
 				506C2F972BA126DE002998B3 /* AuthService.swift */,
 				50A0AB1E2BF591DC00665539 /* RestService.swift */,
-				5012AD4B2C1BBE3D0002A5AA /* WatchConectivityManager.swift */,
+				50EF5D732C1D3B9200BD31D9 /* WatchConnectivityManager.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -280,6 +291,16 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		50EF5D702C1D332C00BD31D9 /* services */ = {
+			isa = PBXGroup;
+			children = (
+				50EF5D772C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift */,
+				509F83622C1E4DDF00C658AC /* AuthService.swift */,
+				509F83602C1E4C9E00C658AC /* AppObserverService.swift */,
+			);
+			path = services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +415,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5012AD3A2C1BB1310002A5AA /* ContentView.swift in Sources */,
+				509F83612C1E4C9E00C658AC /* AppObserverService.swift in Sources */,
+				509F83632C1E4DDF00C658AC /* AuthService.swift in Sources */,
 				5012AD382C1BB1310002A5AA /* dotWatchApp.swift in Sources */,
+				50EF5D782C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,12 +436,12 @@
 				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
 				503468112BB0EB8500DBD606 /* MainView.swift in Sources */,
 				506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */,
+				50EF5D742C1D3B9200BD31D9 /* WatchConnectivityManager.swift in Sources */,
 				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
 				50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */,
 				50255AE32B9BE85700FD3DD1 /* TypingTextView.swift in Sources */,
 				50A0AB1F2BF591DC00665539 /* RestService.swift in Sources */,
 				503468162BB0EE8100DBD606 /* AuthStatus.swift in Sources */,
-				5012AD4C2C1BBE3D0002A5AA /* WatchConectivityManager.swift in Sources */,
 				50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */,
 				507BB8202C1912DD001708B3 /* HomeView.swift in Sources */,
 				506C2F982BA126DE002998B3 /* AuthService.swift in Sources */,
@@ -456,6 +480,7 @@
 				DEVELOPMENT_TEAM = VGUJZ39WN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dotWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.namart.dotai;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -485,6 +510,7 @@
 				DEVELOPMENT_TEAM = VGUJZ39WN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "dotWatch-Watch-App-Info.plist";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.namart.dotai;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -634,6 +660,7 @@
 				DEVELOPMENT_TEAM = VGUJZ39WN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DOT/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DOT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -669,6 +696,7 @@
 				DEVELOPMENT_TEAM = VGUJZ39WN5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DOT/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DOT;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

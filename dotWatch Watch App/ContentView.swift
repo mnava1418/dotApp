@@ -9,8 +9,9 @@ import SwiftUI
 import WatchConnectivity
 
 struct ContentView: View {
-    @StateObject private var conectivityDelegate: WatchConnectivityDelegate = WatchConnectivityDelegate.shared
-    
+    private var appObserver: AppObserverService = AppObserverService() //Needed to add app observers (applicationWillEnterForeground, applicationDidBecomeActive, etc)
+    @StateObject private var connectivityDelegate: WatchConnectivityDelegate = WatchConnectivityDelegate.shared
+        
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [Color.AppColors.darkMain, Color.AppColors.main]),
@@ -18,11 +19,9 @@ struct ContentView: View {
                                    endPoint: .bottomTrailing)
                         .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             
-            if(conectivityDelegate.isAuthenticated) {
+            if(connectivityDelegate.isAuthenticated) {
                 VStack {
                     Button(action: {
-                        // Acción del botón
-                        print("Botón presionado")
                     }) {
                         Image("dot")
                          .resizable()
@@ -31,7 +30,7 @@ struct ContentView: View {
                     }
                     .frame(width: 100, height: 100)
                     
-                    Text("Hola Martin")
+                    Text("Hola Test")
                         .padding(.top, 8)
                 }
                 .padding()
@@ -40,32 +39,6 @@ struct ContentView: View {
                     Text("Por favor, inicia sesión desde tu celular.")
                         .multilineTextAlignment(.center)
                 }
-            }
-        }
-        .onAppear {
-            setupWatchConnectivity()
-        }
-    }
-    
-    private func setupWatchConnectivity() {
-        if WCSession.isSupported() {
-            let session = WCSession.default
-            session.delegate = WatchConnectivityDelegate.shared
-            session.activate()
-        }
-    }
-}
-
-class WatchConnectivityDelegate: NSObject, WCSessionDelegate, ObservableObject {
-    static let shared = WatchConnectivityDelegate()
-    @Published var isAuthenticated = false
-    
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {}
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        if let isAuthenticated = message["isAuthenticated"] as? Bool {
-            DispatchQueue.main.async {
-                self.isAuthenticated = isAuthenticated
             }
         }
     }
