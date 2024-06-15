@@ -18,14 +18,14 @@ struct AppContentView: View {
                 MainView()
             }
             .onAppear{
-                connectivityManager.sendMessage(message: ["isAuthenticated": true])
+                connectivityManager.sendMessage(message: AuthService.getAuthStatus())
             }
         } else {
             VStack {
                 AuthenticationView()
             }
             .onAppear{
-                connectivityManager.sendMessage(message: ["isAuthenticated": false])
+                connectivityManager.sendMessage(message: AuthService.getAuthStatus())
             }
         }
     }
