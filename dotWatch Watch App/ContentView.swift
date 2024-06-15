@@ -30,7 +30,7 @@ struct ContentView: View {
                     }
                     .frame(width: 100, height: 100)
                     
-                    Text("Hola Test")
+                    Text("Hola \(connectivityDelegate.displayName)")
                         .padding(.top, 8)
                 }
                 .padding()

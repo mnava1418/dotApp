@@ -12,6 +12,7 @@ import SwiftUI
 class WatchConnectivityDelegate: NSObject, WCSessionDelegate, ObservableObject {
     static let shared = WatchConnectivityDelegate()
     @Published var isAuthenticated: Bool = false
+    @Published var displayName: String = ""
     public var retryTimer: Timer?
     
     private override init() {
@@ -46,6 +47,10 @@ class WatchConnectivityDelegate: NSObject, WCSessionDelegate, ObservableObject {
         if let isAuthenticated = message["isAuthenticated"] as? Bool {
             DispatchQueue.main.async {
                 self.isAuthenticated = isAuthenticated
+                
+                if let displayName = message["displayName"] as? String {
+                    self.displayName = displayName
+                }
             }
         }
     }
