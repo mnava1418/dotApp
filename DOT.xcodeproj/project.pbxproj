@@ -45,6 +45,8 @@
 		50A0AB232C06A3B400665539 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 50A0AB222C06A3B400665539 /* GoogleService-Info.plist */; };
 		50A0AB252C06ABA100665539 /* ProvideRegistrationCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */; };
 		50AC4F5B2BD1E783001844B6 /* RegisterCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */; };
+		50ACE0572C2394AB004DC191 /* DeviceAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACE0562C2394AB004DC191 /* DeviceAuthService.swift */; };
+		50ACE0592C239FF8004DC191 /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ACE0582C239FF8004DC191 /* AudioService.swift */; };
 		50EF5D742C1D3B9200BD31D9 /* WatchConnectivityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF5D732C1D3B9200BD31D9 /* WatchConnectivityManager.swift */; };
 		50EF5D782C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF5D772C1E10EE00BD31D9 /* WatchConnectivityDelegate.swift */; };
 		50F1FA3B2BACF3A70028B956 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F1FA3A2BACF3A70028B956 /* Constants.swift */; };
@@ -113,6 +115,8 @@
 		50A0AB222C06A3B400665539 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		50A0AB242C06ABA100665539 /* ProvideRegistrationCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProvideRegistrationCodeView.swift; sourceTree = "<group>"; };
 		50AC4F5A2BD1E783001844B6 /* RegisterCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCodeView.swift; sourceTree = "<group>"; };
+		50ACE0562C2394AB004DC191 /* DeviceAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceAuthService.swift; sourceTree = "<group>"; };
+		50ACE0582C239FF8004DC191 /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		50EF5D732C1D3B9200BD31D9 /* WatchConnectivityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityManager.swift; sourceTree = "<group>"; };
 		50EF5D752C1D434F00BD31D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		50EF5D762C1D439500BD31D9 /* dotWatch-Watch-App-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "dotWatch-Watch-App-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -282,6 +286,8 @@
 				506C2F972BA126DE002998B3 /* AuthService.swift */,
 				50A0AB1E2BF591DC00665539 /* RestService.swift */,
 				50EF5D732C1D3B9200BD31D9 /* WatchConnectivityManager.swift */,
+				50ACE0562C2394AB004DC191 /* DeviceAuthService.swift */,
+				50ACE0582C239FF8004DC191 /* AudioService.swift */,
 			);
 			path = services;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 				50F1FA3F2BAD16E90028B956 /* ResetPasswordView.swift in Sources */,
 				503468112BB0EB8500DBD606 /* MainView.swift in Sources */,
 				506C2F952B9FFA8B002998B3 /* AppStatus.swift in Sources */,
+				50ACE0592C239FF8004DC191 /* AudioService.swift in Sources */,
 				50EF5D742C1D3B9200BD31D9 /* WatchConnectivityManager.swift in Sources */,
 				50255AF22B9CAB7A00FD3DD1 /* RegisterFormView.swift in Sources */,
 				50F1FA3D2BACF4850028B956 /* NavigationLinkButton.swift in Sources */,
@@ -449,6 +456,7 @@
 				50255AD22B993D1300FD3DD1 /* DOTApp.swift in Sources */,
 				50255AE82B9C150E00FD3DD1 /* DotUser.swift in Sources */,
 				503468182BB0F2B700DBD606 /* AppContentView.swift in Sources */,
+				50ACE0572C2394AB004DC191 /* DeviceAuthService.swift in Sources */,
 				507BB8222C19152E001708B3 /* SettingsView.swift in Sources */,
 				50255AF02B9C209E00FD3DD1 /* LoginFormView.swift in Sources */,
 				506C2F9A2BA14A77002998B3 /* Modal.swift in Sources */,
@@ -662,6 +670,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOT/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DOT;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "DOT requiere tu autorización para usar tu micrófono";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "DOT requiere tu autorización para reconocer tu voz.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -698,6 +708,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DOT/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = DOT;
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "DOT requiere tu autorización para usar tu micrófono";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "DOT requiere tu autorización para reconocer tu voz.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
