@@ -39,6 +39,10 @@ struct HomeView: View {
                          .resizable()
                          .frame(width: 200, height: 200)
                          .padding()
+                         .rotationEffect(.degrees(audioService.isProcessing ? 360 : 0))
+                         .animation(audioService.isProcessing ? Animation.linear(duration: 0.5).repeatForever(autoreverses: false) : .default, value: audioService.isProcessing)
+                         .scaleEffect(audioService.isRecording ? 1.1 : 1.0)
+                         .animation(audioService.isRecording ? Animation.easeInOut(duration: 0.5).repeatForever(autoreverses: true) : .default, value: audioService.isRecording)
                     }
                     
                     HStack {
@@ -78,7 +82,7 @@ struct HomeView: View {
                 }
             }
         }
-    }    
+    }
 }
 
 #Preview {
