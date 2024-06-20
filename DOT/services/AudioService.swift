@@ -22,6 +22,7 @@ class AudioService: ObservableObject {
     private var isStopping = false
     private var silenceTimer: Timer?
     @Published var isRecording = false
+    @Published var isProcessing = false
     
     public func startRecording() {
         if !deviceAuthorized {
@@ -70,7 +71,14 @@ class AudioService: ObservableObject {
         recognitionTask = recognizer.recognitionTask(with: recognitionRequest) { result, error in
             if let result = result {
                 if result.isFinal {
-                    self.stopRecording(message: "Estoy procesando tu solicitud...")
+                    self.transcription = "Estoy procesando tu solicitud..."                    
+                    self.isProcessing = true
+                    
+                    _ = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
+                        self.isProcessing = false
+                        self.transcription = "¡Muy pronto te estaré dando respuestas de verdad!"
+                    }
+                    
                 } else {
                     self.restartSilenceTimer()
                     self.transcription = result.bestTranscription.formattedString
@@ -79,7 +87,7 @@ class AudioService: ObservableObject {
             
             if let error = error {
                 print("Error de reconocimiento: \(error)")
-                self.stopRecording(message: nil)
+                self.stopRecording(message: "Lo siento no pude escucharte. Intentalo de nuevo.")
             }
         }
         
@@ -89,12 +97,12 @@ class AudioService: ObservableObject {
     }
     
     public func stopRecording(message: String?) {
-        if let message = message {
-            self.transcription = message
-        }
-        
         guard !isStopping else {
             return
+        }
+        
+        if let message = message {
+            self.transcription = message
         }
         
         isStopping = true
@@ -113,7 +121,7 @@ class AudioService: ObservableObject {
     
     private func startSilenceTimer() {
         silenceTimer = Timer.scheduledTimer(withTimeInterval: 3.0, repeats: false) { _ in
-            self.stopRecording(message: nil)
+            self.stopRecording(message: "Presiona el botón para empezar a escucharte.")
         }
     }
     
